@@ -18,22 +18,29 @@
 // Additional Comments:
 // Reset is synchronous with the clock
 //////////////////////////////////////////////////////////////////////////////////
+`define INST_MEM_SIZE 1024
 
-
-module PC(
-    // clock and reset signal
-    input clock, reset,
-    // 32 bits PC input 
-	input [31:0] PCin,
-	// 32 bits PC output after incrementing by 4
-	output reg [31:0] PCout
+module INST_MEM(
+    input [31:0] PC,
+    input clk,
+    output reg [31:0] inst
 );
+    // 32-bit memory with 1024 words
+    // 1024 entries of 32 bits each
+    reg [31:0] mem [0:`INST_MEM_SIZE-1];
 
-	always @(posedge clock) 
+    initial
     begin
-		if (reset == 1) 
-			PCout <= 32'b0;
-		else 
-			PCout <= PCin + 4; 
-	end
+        $readmemh("instruction.mem", mem);
+    end
+
+    always @ (posedge clk)
+    begin
+        // PC is divided by 4 to get the memory address,
+        // because the memory is word addressed
+        // PC : 0x0000_0000 -> mem[0]
+        // PC : 0x0000_0004 -> mem[1]
+        inst <= mem[PC >> 2];
+    end
+
 endmodule
