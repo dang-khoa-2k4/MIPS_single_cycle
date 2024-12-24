@@ -2,9 +2,6 @@
 
 module INST_MEM_tb;
 
-    // Parameters
-    `define INST_MEM_SIZE 1024
-
     // Testbench Signals
     reg [31:0] PC;
     reg clk;
@@ -28,7 +25,6 @@ module INST_MEM_tb;
         // Initialize PC
         PC = 32'h00000000;
 
-        // Wait for a few clock cycles
         #10;
         
         // Test case 1: PC = 0 (should fetch mem[0])
