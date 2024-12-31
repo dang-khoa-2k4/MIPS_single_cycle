@@ -10,7 +10,8 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// Base on ALUOp, Opcode the decode ALUControl. When I read the slide in Computer architecture I don't understand how to decode the ALUControl for iType
+// Base on ALUOp, Opcode the decode ALUControl. When I read the slide in Computer architecture 
+// I don't understand how to decode the ALUControl for iType
 // by only use ALUOp so I use ALUcode, 
 // Dependencies: 
 // 
@@ -22,7 +23,7 @@
 
 
 module ALU_decoder(
-     input [1:0] ALUOp,         
+    input [1:0] ALUOp,         
     input [5:0] funct,         
     input [5:0] opcode,
     output reg [3:0] ALUControl
@@ -30,7 +31,7 @@ module ALU_decoder(
 
 always @(*) begin
     case (ALUOp)
-        2'b00: ALUControl = 4'b0000; //     add signal for (addi, lw, sw)
+        2'b00: ALUControl = 4'b0010; //     add signal for (addi, lw, sw)
         2'b01: ALUControl = 4'b0110;     // SUB (beq)
         2'b10: 
         begin    //this case for R_type

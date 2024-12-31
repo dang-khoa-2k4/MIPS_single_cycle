@@ -28,10 +28,11 @@
 module ALU(i_data_A, i_data_B, i_alu_control, o_zero_flag, o_result);
 input [31:0] i_data_A;					// A operand 
 input [31:0] i_data_B;					// B operand
-output reg [31:0] o_result;				// ALU result
 input [3:0] i_alu_control;				// Control signal
 
+output reg [31:0] o_result;				// ALU result
 output wire o_zero_flag;				// Zero flag 
+
 assign o_zero_flag = ~|o_result;
 
 // ALU operation logic
