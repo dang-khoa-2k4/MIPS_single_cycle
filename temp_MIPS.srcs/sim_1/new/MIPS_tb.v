@@ -7,7 +7,6 @@ module MIPS_tb();
     reg reset;
 
     // Outputs from MIPS
-    reg [31:0] PCin;
     wire [31:0] PCout;
     wire [31:0] inst;
     wire RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump;
@@ -18,11 +17,14 @@ module MIPS_tb();
     wire Zero;
     wire AndGateOut;
 
+    // Declare PCin as wire (connected to inout)
+    wire [31:0] PCin;
+
     // Instantiate the MIPS module
     MIPS uut (
         .clock(clock),
         .reset(reset),
-        .PCin(PCin),
+        .PCin(PCin),  // Connect the wire to the inout port
         .PCout(PCout),
         .inst(inst),
         .RegDst(RegDst),
@@ -49,37 +51,26 @@ module MIPS_tb();
         .WriteData_Reg(WriteData_Reg)
     );
 
+
     // Clock generation
     initial begin
-        PCin = 0;
         clock = 0;
         forever #5 clock = ~clock; // 10ns clock period
     end
 
     // Stimulus
     initial begin
-        // Initialize signals
         reset = 1;
-
-        // Wait for a few clock cycles
-        #20;
+        #5;
         reset = 0;
-
-        // Add stimulus as needed, for example:
-        // - Load instructions into the instruction memory
-        // - Set up initial data in data memory and registers
-
-        // Wait and observe
-        #1000;
-
-        // Finish simulation
+        #1000
         $stop;
     end
 
     // Monitor outputs
     initial begin
         $monitor($time, " PCin=%h, PCout=%h, inst=%h, ALUOut=%h, Zero=%b",
-                 PCin, PCout, inst, ALUOut, Zero);
+              PCin ,PCout, inst, ALUOut, Zero);
     end
 
 endmodule

@@ -20,7 +20,7 @@ Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.Add_ALU
 Compiling module xil_defaultlib.AndGate
 Compiling module xil_defaultlib.jump_address
-Compiling module xil_defaultlib.data_memory
+Compiling module xil_defaultlib.JumpMux
 Compiling module xil_defaultlib.MIPS
 Compiling module xil_defaultlib.MIPS_tb
 Compiling module xil_defaultlib.glbl

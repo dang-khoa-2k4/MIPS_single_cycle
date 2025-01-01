@@ -34,7 +34,7 @@ module pc_inst_tb;
        // Test procedure
        initial begin
            // Initialize signals
-           reset = 0;
+           reset = 1;
            PCin = 0;
            #5
            // Test cases

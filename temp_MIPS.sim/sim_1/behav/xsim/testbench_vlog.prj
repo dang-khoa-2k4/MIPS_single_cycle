@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/jump_addr.v" \
+"../../../../temp_MIPS.srcs/sim_1/new/jump_addr_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
