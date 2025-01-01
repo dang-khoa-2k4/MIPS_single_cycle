@@ -23,7 +23,9 @@ module MIPS(
 	input reset;
 
     //Connection of PC
-	output wire [31:0] PCin, PCout;
+	input [31:0] PCin;
+	output wire [31:0] PCout;
+
 	PC pc_0(
 		//inputs
 		.clock(clock),
@@ -172,7 +174,7 @@ module MIPS(
 
     wire [31 : 0] next_addr;
 	//Connection of Mux2
-	mux mux_2(
+	mux #(32) mux_2(
 		//inputs
 		.i0(PCout),
 		.i1(Add_ALUOut),

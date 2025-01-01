@@ -22,12 +22,12 @@
 
 module jump_address(
     input [25:0] addr,
-    input [3:0] PCout, // Upper 4 bits of the program counter
+    input [31:0] PCout, // Upper 4 bits of the program counter
     output [31:0] jump_out
 );
 
     // Concatenate PCout (upper 4 bits), shifted address, and zero-padding
-    assign jump_out = {PCout, addr, 2'b00};
+    assign jump_out = {PCout[31:28], addr, 2'b00};
 
 endmodule
 

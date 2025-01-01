@@ -7,7 +7,8 @@ module MIPS_tb();
     reg reset;
 
     // Outputs from MIPS
-    wire [31:0] PCin, PCout;
+    reg [31:0] PCin;
+    wire [31:0] PCout;
     wire [31:0] inst;
     wire RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump;
     wire [1:0] ALUOp;
@@ -50,6 +51,7 @@ module MIPS_tb();
 
     // Clock generation
     initial begin
+        PCin = 0;
         clock = 0;
         forever #5 clock = ~clock; // 10ns clock period
     end
