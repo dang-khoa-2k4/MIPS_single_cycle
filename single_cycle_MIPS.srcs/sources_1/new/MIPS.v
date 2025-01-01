@@ -2,7 +2,7 @@ module MIPS(
                 clock, reset, 
                 PCin,PCout,
                 inst,
-                RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump
+                RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump,
                 ALUOp,
                 WriteReg,
                 ReadData1, ReadData2,
@@ -42,7 +42,8 @@ module MIPS(
 	);
 
     //Connection of MainControl
-	output wire RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump;
+	output wire RegDst, RegWrite, ALUSrc, MemtoReg
+                , MemRead, MemWrite, Branch, Jump;
 	output wire [1:0] ALUOp;
 	Controller main_control(
 		//inputs
@@ -178,7 +179,6 @@ module MIPS(
 		.o(next_addr)
 	);
 
-    output wire Jump;
     mux mux_3(
         //input
         .i0(jump_addr),
@@ -186,7 +186,7 @@ module MIPS(
         .select(Jump),
         //output
         .o(PCin)
-    )
+    );
 	
 	//Connection of DataMemory
 	output wire [31:0] ReadData;
@@ -201,8 +201,6 @@ module MIPS(
 		.read_data(ReadData)
 	);
 	
-	//Connection of Mux3
-	output wire[31:0] WriteData_Reg;
 	mux mux_4(
 	//inputs
 	.i0(ReadData),
