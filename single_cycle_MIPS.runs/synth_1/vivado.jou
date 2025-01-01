@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Jan  1 11:23:02 2025
+# Process ID         : 24100
+# Current directory  : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1
+# Command line       : vivado.exe -log MIPS.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS.tcl
+# Log file           : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1/MIPS.vds
+# Journal file       : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-NIHNLB6
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22621
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency      : 3110 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 16
+# Host memory        : 16858 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 31891 MB
+# Available Virtual  : 15426 MB
+#-----------------------------------------------------------
+source MIPS.tcl -notrace

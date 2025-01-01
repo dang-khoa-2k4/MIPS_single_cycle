@@ -1,0 +1,329 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Jan  1 11:23:02 2025
+# Process ID         : 24100
+# Current directory  : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1
+# Command line       : vivado.exe -log MIPS.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS.tcl
+# Log file           : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1/MIPS.vds
+# Journal file       : C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-NIHNLB6
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22621
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency      : 3110 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 16
+# Host memory        : 16858 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 31891 MB
+# Available Virtual  : 15426 MB
+#-----------------------------------------------------------
+source MIPS.tcl -notrace
+Command: synth_design -top MIPS -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 14196
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.500 ; gain = 468.082
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'MIPS' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/MIPS.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6157] synthesizing module 'INST_MEM' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/INST_MEM.v:23]
+INFO: [Synth 8-3876] $readmem data file 'instruction.mem' is read successfully [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/INST_MEM.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'INST_MEM' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/INST_MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/Controller.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/Controller.v:27]
+INFO: [Synth 8-6157] synthesizing module 'mux' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:1]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:1]
+INFO: [Synth 8-6157] synthesizing module 'registers' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/registers.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'registers' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/registers.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sign_extend' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extend' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:31]
+INFO: [Synth 8-6157] synthesizing module 'mux__parameterized0' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux__parameterized0' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_left_2' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'shift_left_2' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:24]
+INFO: [Synth 8-6157] synthesizing module 'ALU_decoder' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/ALU_decoder.v:25]
+INFO: [Synth 8-226] default block is never used [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/ALU_decoder.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_decoder' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/ALU_decoder.v:25]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/ALU.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/ALU_and_ALU_decoder/ALU_and_ALU_decoder.srcs/sources_1/new/ALU.v:28]
+INFO: [Synth 8-6157] synthesizing module 'Add_ALU' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/Add_ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Add_ALU' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/Add_ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'AndGate' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'AndGate' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/others.v:16]
+INFO: [Synth 8-6157] synthesizing module 'jump_addr' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/jump_addr.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'jump_addr' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/jump_addr.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'PCout' does not match port width (4) of module 'jump_addr' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/MIPS.v:127]
+INFO: [Synth 8-6157] synthesizing module 'data_memory' [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/data_memory.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'data_memory' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/imports/Logic design project/data_memory.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'MIPS' (0#1) [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/sources_1/new/MIPS.v:1]
+WARNING: [Synth 8-7129] Port memread in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[1] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[0] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i[31] in module shift_left_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i[30] in module shift_left_2 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1175.789 ; gain = 573.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1175.789 ; gain = 573.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1175.789 ; gain = 573.371
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1175.789 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
+Finished Parsing XDC File [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1252.293 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1252.293 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.293 ; gain = 649.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.293 ; gain = 649.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.293 ; gain = 649.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.293 ; gain = 649.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	               2K Bit	(64 X 32 bit)          RAMs := 1     
++---Muxes : 
+	  42 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 8     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	  10 Input    2 Bit        Muxes := 1     
+	  10 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-6430] The Block RAM "MIPS/regfile_0/registers_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6430] The Block RAM "MIPS/regfile_0/registers_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+INFO: [Synth 8-3971] The signal "MIPS/regfile_0/registers_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3917] design MIPS has port ShiftOut[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port ShiftOut[0] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS has port ALUCtl[3] driven by constant 0
+RAM Pipeline Warning: Read Address Register Found For RAM regfile_0/registers_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM regfile_0/registers_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM regfile_0/registers_reg. We will not be able to pipeline it. This may degrade performance. 
+WARNING: [Synth 8-6430] The Block RAM "MIPS/regfile_0/registers_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6430] The Block RAM "MIPS/regfile_0/registers_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+INFO: [Synth 8-3971] The signal "MIPS/regfile_0/registers_reg" was recognized as a true dual port RAM template.
+RAM Pipeline Warning: Read Address Register Found For RAM regfile_0/registers_reg. We will not be able to pipeline it. This may degrade performance. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:25 . Memory (MB): peak = 1265.004 ; gain = 662.586
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
+-------NONE-------
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+--------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object               | Inference | Size (Depth x Width) | Primitives     | 
++------------+--------------------------+-----------+----------------------+----------------+
+|MIPS        | data_memory_0/memory_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
++------------+--------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 1381.297 ; gain = 778.879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 1381.809 ; gain = 779.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
+-------NONE-------
+
+Distributed RAM: Final Mapping Report
++------------+--------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object               | Inference | Size (Depth x Width) | Primitives     | 
++------------+--------------------------+-----------+----------------------+----------------+
+|MIPS        | data_memory_0/memory_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
++------------+--------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance regfile_0/registers_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance regfile_0/registers_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 1401.191 ; gain = 798.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1607.473 ; gain = 1005.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1607.473 ; gain = 1005.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1607.473 ; gain = 1005.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1607.473 ; gain = 1005.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1608.445 ; gain = 1006.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1608.445 ; gain = 1006.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    36|
+|3     |LUT1     |     1|
+|4     |LUT2     |    28|
+|5     |LUT3     |    11|
+|6     |LUT4     |    81|
+|7     |LUT5     |   110|
+|8     |LUT6     |   283|
+|9     |RAM64X1S |    32|
+|10    |RAMB18E1 |     2|
+|11    |FDRE     |    57|
+|12    |IBUF     |     2|
+|13    |OBUF     |   405|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1608.445 ; gain = 1006.027
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:37 . Memory (MB): peak = 1608.445 ; gain = 929.523
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:40 . Memory (MB): peak = 1608.445 ; gain = 1006.027
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1608.445 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1608.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
+
+Synth Design complete | Checksum: 7d957313
+INFO: [Common 17-83] Releasing license: Synthesis
+50 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:47 . Memory (MB): peak = 1608.445 ; gain = 1240.258
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1608.445 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/synth_1/MIPS.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  1 11:23:55 2025...

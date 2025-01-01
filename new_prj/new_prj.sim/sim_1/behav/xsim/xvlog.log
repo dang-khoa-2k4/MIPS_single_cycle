@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_processing_system7_0_0/sim/zynq_example_processing_system7_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_processing_system7_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_xbar_0/sim/zynq_example_axi_interconnect_0_imp_xbar_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_axi_interconnect_0_imp_xbar_0
+WARNING: [VRFC 10-8772] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_xbar_0/sim/zynq_example_axi_interconnect_0_imp_xbar_0.v:226]
+WARNING: [VRFC 10-8772] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_xbar_0/sim/zynq_example_axi_interconnect_0_imp_xbar_0.v:227]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_auto_pc_1/sim/zynq_example_axi_interconnect_0_imp_auto_pc_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_axi_interconnect_0_imp_auto_pc_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_auto_pc_0/sim/zynq_example_axi_interconnect_0_imp_auto_pc_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_axi_interconnect_0_imp_auto_pc_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_blk_mem_gen_0_0/sim/zynq_example_blk_mem_gen_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_blk_mem_gen_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/sim/zynq_example.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module m00_couplers_imp_7OQCPI
+INFO: [VRFC 10-311] analyzing module m01_couplers_imp_3HYJ2U
+INFO: [VRFC 10-311] analyzing module s00_couplers_imp_1X9O1X
+INFO: [VRFC 10-311] analyzing module zynq_example
+INFO: [VRFC 10-311] analyzing module zynq_example_axi_interconnect_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.gen/sources_1/bd/zynq_example/hdl/zynq_example_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zynq_example_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

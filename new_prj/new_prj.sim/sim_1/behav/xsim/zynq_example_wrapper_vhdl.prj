@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_proc_sys_reset_0_0/sim/zynq_example_proc_sys_reset_0_0.vhd" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_gpio_0_0/sim/zynq_example_axi_gpio_0_0.vhd" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_bram_ctrl_0_0/sim/zynq_example_axi_bram_ctrl_0_0.vhd" \
+
+# Do not sort compile order
+nosort

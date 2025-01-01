@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_proc_sys_reset_0_0/sim/zynq_example_proc_sys_reset_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_example_proc_sys_reset_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_gpio_0_0/sim/zynq_example_axi_gpio_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_example_axi_gpio_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/new_prj/new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_bram_ctrl_0_0/sim/zynq_example_axi_bram_ctrl_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_example_axi_bram_ctrl_0_0'

@@ -10,12 +10,12 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// decode the signal for other component base on opcode 
+// Decode the signal for other components based on opcode 
 // ALUOp= 00 -> add
-// ALUOp= 01-> sub
-// ALUOp= 10-> Rtype
-// ALUOp= 11-> itype 
-// When addi i make it as add
+// ALUOp= 01 -> sub
+// ALUOp= 10 -> R-type
+// ALUOp= 11 -> I-type 
+// When addi, it is treated as add.
 // Dependencies: 
 // 
 // Revision:
@@ -23,8 +23,9 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
 module Controller(
-    input  [5:0] opcode,       // Opcode đầu vào (Instruction [31:26])
+    input  [5:0] Opcode,       // Opcode đầu vào (Instruction [31:26])
     output reg RegDst,         // Chọn thanh ghi đích
     output reg ALUSrc,         // Chọn nguồn cho ALU
     output reg MemRead,        // Cho phép đọc bộ nhớ
@@ -38,76 +39,74 @@ module Controller(
 
 always @(*) begin
     // Giá trị mặc định cho tất cả tín hiệu
-    RegDst   = 0;
-    ALUSrc   = 0;
-    MemRead  = 0;
-    MemtoReg = 0;
-    MemWrite = 0;
-    Branch   = 0;
-    RegWrite = 0;
-    Jump     = 0;
+    RegDst   = 1'b0;
+    ALUSrc   = 1'b0;
+    MemRead  = 1'b0;
+    MemtoReg = 1'b0;
+    MemWrite = 1'b0;
+    Branch   = 1'b0;
+    RegWrite = 1'b0;
+    Jump     = 1'b0;
     ALUOp    = 2'b00;
 
     // Giải mã opcode
-    case (opcode)
+    case (Opcode)
         6'b000000: begin // R-Type: add, sub, and, or, nor, slt
-            RegDst   = 1;
-            ALUSrc   = 0;
-            RegWrite = 1;
+            RegDst   = 1'b1;
+            ALUSrc   = 1'b0;
+            RegWrite = 1'b1;
             ALUOp    = 2'b10; // Dùng funct để giải mã
         end
         6'b001000: begin // addi (Add Immediate)
-            ALUSrc   = 1;
-            RegWrite = 1;
+            ALUSrc   = 1'b1;
+            RegWrite = 1'b1;
             ALUOp    = 2'b00; // Phép cộng
         end
         6'b100011: begin // lw (Load Word)
-            ALUSrc   = 1;
-            MemRead  = 1;
-            MemtoReg = 1;
-            RegWrite = 1;
+            ALUSrc   = 1'b1;
+            MemRead  = 1'b1;
+            MemtoReg = 1'b1;
+            RegWrite = 1'b1;
             ALUOp    = 2'b00; // Phép cộng để tính địa chỉ
         end
         6'b101011: begin // sw (Store Word)
-            ALUSrc   = 1;
-            MemWrite = 1;
+            ALUSrc   = 1'b1;
+            MemWrite = 1'b1;
             ALUOp    = 2'b00; // Phép cộng để tính địa chỉ
         end
         6'b000100: begin // beq (Branch if Equal)
-            ALUSrc   = 0;
-            Branch   = 1;
+            ALUSrc   = 1'b0;
+            Branch   = 1'b1;
             ALUOp    = 2'b01; // Phép trừ để so sánh
         end
-        // Chỉ với 2 biet ALUop không thể truyền được các lệnh đầy đủ các lệnh như add, sub, and, or, slt nên cần truyền OPcode vào cả ALUdecoder
-        // để có thể nhận biết được
         6'b001100: begin // andi (AND Immediate)
-            ALUSrc   = 1;
-            RegWrite = 1;
+            ALUSrc   = 1'b1;
+            RegWrite = 1'b1;
             ALUOp    = 2'b11; // Phép AND 
         end
         6'b001101: begin // ori (OR Immediate)
-            ALUSrc   = 1;
-            RegWrite = 1;
+            ALUSrc   = 1'b1;
+            RegWrite = 1'b1;
             ALUOp    = 2'b11; // Phép OR
         end
         6'b001010: begin // slti (Set Less Than Immediate)
-            ALUSrc   = 1;
-            RegWrite = 1;
+            ALUSrc   = 1'b1;
+            RegWrite = 1'b1;
             ALUOp    = 2'b11; // Phép SLT
         end
         6'b000010: begin // j (Jump)
-            Jump     = 1;
+            Jump     = 1'b1;
         end
         default: begin
-            // Mặc định tất cả tín hiệu là 0
-            RegDst   = 0;
-            ALUSrc   = 0;
-            MemRead  = 0;
-            MemtoReg = 0;
-            MemWrite = 0;
-            Branch   = 0;
-            RegWrite = 0;
-            Jump     = 0;
+            // Tín hiệu mặc định nếu opcode không khớp
+            RegDst   = 1'b0;
+            ALUSrc   = 1'b0;
+            MemRead  = 1'b0;
+            MemtoReg = 1'b0;
+            MemWrite = 1'b0;
+            Branch   = 1'b0;
+            RegWrite = 1'b0;
+            Jump     = 1'b0;
             ALUOp    = 2'b00;
         end
     endcase

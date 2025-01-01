@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../new_prj.gen/sources_1/bd/zynq_example/ipshared/ec67/hdl" --include "../../../../new_prj.gen/sources_1/bd/zynq_example/ipshared/86fe/hdl" --include "D:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_processing_system7_0_0/sim/zynq_example_processing_system7_0_0.v" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_xbar_0/sim/zynq_example_axi_interconnect_0_imp_xbar_0.v" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_auto_pc_1/sim/zynq_example_axi_interconnect_0_imp_auto_pc_1.v" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_axi_interconnect_0_imp_auto_pc_0/sim/zynq_example_axi_interconnect_0_imp_auto_pc_0.v" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/ip/zynq_example_blk_mem_gen_0_0/sim/zynq_example_blk_mem_gen_0_0.v" \
+"../../../../new_prj.ip_user_files/bd/zynq_example/sim/zynq_example.v" \
+"../../../../new_prj.gen/sources_1/bd/zynq_example/hdl/zynq_example_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

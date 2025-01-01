@@ -1,0 +1,369 @@
+
+*** Running vivado
+    with args -log MIPS.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MIPS.tcl -notrace
+
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Wed Jan  1 11:24:11 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source MIPS.tcl -notrace
+Command: link_design -top MIPS -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 613.492 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
+Finished Parsing XDC File [C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 742.172 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 742.172 ; gain = 374.688
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.773 . Memory (MB): peak = 775.773 ; gain = 33.602
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1320.457 ; gain = 544.684
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Phase 1 Initialization | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: b6f3244a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Retarget | Checksum: b6f3244a
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 4e49601f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Constant propagation | Checksum: 4e49601f
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Phase 5 Sweep | Checksum: 634c4ed0
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Sweep | Checksum: 634c4ed0
+INFO: [Opt 31-389] Phase Sweep created 78 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 634c4ed0
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.147 . Memory (MB): peak = 1723.242 ; gain = 0.000
+BUFG optimization | Checksum: 634c4ed0
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 634c4ed0
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.151 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Shift Register Optimization | Checksum: 634c4ed0
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 40c2244d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Post Processing Netlist | Checksum: 40c2244d
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 10f23a236
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.197 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 10f23a236
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.204 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Phase 9 Finalization | Checksum: 10f23a236
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.204 . Memory (MB): peak = 1723.242 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |              78  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 10f23a236
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.205 . Memory (MB): peak = 1723.242 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 2 Total Ports: 4
+Ending PowerOpt Patch Enables Task | Checksum: 13dac34bc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1791.254 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 13dac34bc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1791.254 ; gain = 68.012
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 13dac34bc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.254 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.254 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 10033b41f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.254 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+32 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1791.254 ; gain = 1049.082
+INFO: [Vivado 12-24828] Executing command : report_drc -file MIPS_drc_opted.rpt -pb MIPS_drc_opted.pb -rpx MIPS_drc_opted.rpx
+Command: report_drc -file MIPS_drc_opted.rpt -pb MIPS_drc_opted.pb -rpx MIPS_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/impl_1/MIPS_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1791.254 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.runs/impl_1/MIPS_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1791.254 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 79f1928f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.254 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1791.254 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-415] IO Placement failed due to overutilization. This design contains 407 I/O ports
+ while the target  device: 7z020 package: clg400, contains only 255 available user I/O. The target device has 255 usable I/O pins of which 0 are already occupied by user-locked I/Os.
+ To rectify this issue:
+ 1. Ensure you are targeting the correct device and package.  Select a larger device or different package if necessary.
+ 2. Check the top-level ports of the design to ensure the correct number of ports are specified.
+ 3. Consider design changes to reduce the number of I/Os necessary.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+ERROR: [Place 30-68] Instance ALUCtl_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUCtl_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUCtl_OBUF[2]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUCtl_OBUF[3]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOp_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOp_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[10]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[11]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[12]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[13]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[14]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[15]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[16]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[17]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[18]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[19]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[20]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[21]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[22]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[23]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[24]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[25]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[26]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[27]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[28]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[29]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[2]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[30]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[31]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[3]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[4]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[5]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[6]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[7]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[8]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUOut_OBUF[9]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALUSrc_OBUF_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[10]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[11]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[12]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[13]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[14]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[15]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[16]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[17]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[18]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[19]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[20]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[21]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[22]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[23]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[24]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[25]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[26]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[27]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[28]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[29]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[2]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[30]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[31]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[3]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[4]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[5]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[6]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[7]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[8]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance ALU_B_OBUF[9]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[10]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[11]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[12]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[13]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[14]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[15]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[16]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[17]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[18]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[19]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[20]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[21]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[22]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[23]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[24]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[25]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[26]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[27]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[28]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[29]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[2]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[30]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[31]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[3]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[4]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[5]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance Add_ALUOut_OBUF[6]_inst (OBUF) is not placed
+INFO: [Common 17-14] Message 'Place 30-68' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: f197c1a6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.333 . Memory (MB): peak = 1791.254 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: f197c1a6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.334 . Memory (MB): peak = 1791.254 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: f197c1a6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.337 . Memory (MB): peak = 1791.254 ; gain = 0.000
+51 Infos, 1 Warnings, 0 Critical Warnings and 103 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  1 11:24:40 2025...
