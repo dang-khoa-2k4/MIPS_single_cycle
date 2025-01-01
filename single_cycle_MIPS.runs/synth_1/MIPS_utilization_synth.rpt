@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Jan  1 11:23:55 2025
+| Date         : Wed Jan  1 15:35:53 2025
 | Host         : DESKTOP-NIHNLB6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb
 | Design       : MIPS
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  510 |     0 |          0 |     53200 |  0.96 |
-|   LUT as Logic             |  478 |     0 |          0 |     53200 |  0.90 |
+| Slice LUTs*                |  441 |     0 |          0 |     53200 |  0.83 |
+|   LUT as Logic             |  409 |     0 |          0 |     53200 |  0.77 |
 |   LUT as Memory            |   32 |     0 |          0 |     17400 |  0.18 |
 |     LUT as Distributed RAM |   32 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
@@ -93,24 +93,24 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+------------+-----------+--------+
-|          Site Type          | Used | Fixed | Prohibited | Available |  Util% |
-+-----------------------------+------+-------+------------+-----------+--------+
-| Bonded IOB                  |  407 |     0 |          0 |       125 | 325.60 |
-| Bonded IPADs                |    0 |     0 |          0 |         2 |   0.00 |
-| Bonded IOPADs               |    0 |     0 |          0 |       130 |   0.00 |
-| PHY_CONTROL                 |    0 |     0 |          0 |         4 |   0.00 |
-| PHASER_REF                  |    0 |     0 |          0 |         4 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |          0 |        16 |   0.00 |
-| IN_FIFO                     |    0 |     0 |          0 |        16 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |          0 |         4 |   0.00 |
-| IBUFDS                      |    0 |     0 |          0 |       121 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        16 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        16 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       200 |   0.00 |
-| ILOGIC                      |    0 |     0 |          0 |       125 |   0.00 |
-| OLOGIC                      |    0 |     0 |          0 |       125 |   0.00 |
-+-----------------------------+------+-------+------------+-----------+--------+
++-----------------------------+------+-------+------------+-----------+-------+
+|          Site Type          | Used | Fixed | Prohibited | Available | Util% |
++-----------------------------+------+-------+------------+-----------+-------+
+| Bonded IOB                  |   66 |     0 |          0 |       125 | 52.80 |
+| Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         4 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |        16 |  0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |        16 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         4 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       121 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        16 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        16 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       200 |  0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       125 |  0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       125 |  0.00 |
++-----------------------------+------+-------+------------+-----------+-------+
 
 
 5. Clocking
@@ -152,18 +152,17 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |  405 |                  IO |
-| LUT6     |  283 |                 LUT |
-| LUT5     |  110 |                 LUT |
-| LUT4     |   81 |                 LUT |
+| LUT6     |  226 |                 LUT |
+| LUT5     |  103 |                 LUT |
+| OBUF     |   64 |                  IO |
 | FDRE     |   57 |        Flop & Latch |
+| LUT4     |   56 |                 LUT |
 | CARRY4   |   36 |          CarryLogic |
 | RAMS64E  |   32 |  Distributed Memory |
-| LUT2     |   28 |                 LUT |
-| LUT3     |   11 |                 LUT |
+| LUT3     |   31 |                 LUT |
 | RAMB18E1 |    2 |        Block Memory |
+| LUT2     |    2 |                 LUT |
 | IBUF     |    2 |                  IO |
-| LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

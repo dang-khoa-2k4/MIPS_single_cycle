@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param synth.incrementalSynthesisCache C:/Users/Asus/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14180-DESKTOP-NIHNLB6/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -101,6 +102,8 @@ read_xdc C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.src
 set_property used_in_implementation false [get_files C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/Asus/Desktop/TKLL_2024/MIPS_single_cycle/single_cycle_MIPS.srcs/utils_1/imports/synth_1/MIPS.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

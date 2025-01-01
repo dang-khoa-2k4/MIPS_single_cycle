@@ -1,25 +1,52 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 12/15/2024 10:09:05 PM
+// Design Name: 
+// Module Name: MIPS
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// Optimized version with reduced output signals.
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module MIPS(
     input clock,
     input reset,
-    
-    // Outputs for debugging and synthesis
-    output wire [31:0] PCin, PCout,
-    output wire [31:0] inst,
-    output wire RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump,
-    output wire [1:0] ALUOp,
-    output wire [4:0] WriteReg,
-    output wire [31:0] ReadData1, ReadData2,
-    output wire [31:0] Extend32,
-    output wire [31:0] ALU_B,
-    output wire [31:0] ShiftOut,
-    output wire [3:0] ALUCtl,
-    output wire Zero,
-    output wire [31:0] ALUOut,
-    output wire [31:0] Add_ALUOut,
-    output wire AndGateOut,
-    output wire [31:0] ReadData,
-    output wire [31:0] WriteData_Reg
+    // Combined debug outputs
+    output wire [31:0] DebugOut1,
+    output wire [31:0] DebugOut2
 );
+
+    wire [31:0] PCin, PCout;
+    wire [31:0] inst;
+    wire RegDst, RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, Jump;
+    wire [1:0] ALUOp;
+    wire [4:0] WriteReg;
+    wire [31:0] ReadData1, ReadData2;
+    wire [31:0] Extend32;
+    wire [31:0] ALU_B;
+    wire [31:0] ShiftOut;
+    wire [3:0] ALUCtl;
+    wire Zero;
+    wire [31:0] ALUOut;
+    wire [31:0] Add_ALUOut;
+    wire AndGateOut;
+    wire [31:0] ReadData;
+    wire [31:0] WriteData_Reg;
+
+    assign DebugOut1 = PCout; // Debug PCout
+    assign DebugOut2 = ALUOut; // Debug ALU result
+
     // Connection of PC
     PC pc_0(
         .clock(clock),
