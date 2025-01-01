@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/ALU.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/Add_ALU.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/Controller.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/MIPS.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/PC.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/data_memory.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/jump_addr.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/others.v" \
+"../../../../temp_MIPS.srcs/sources_1/imports/source/registers.v" \
+"../../../../temp_MIPS.srcs/sim_1/new/MIPS_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
