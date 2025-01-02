@@ -207,18 +207,6 @@ data_memory data_memory_inst(.clk(i_clk),
 				.read_data(RAM_RD));
 
 
-//wire IO;
-//wire BAM;
-
-//address_space address_space_inst(.i_clk(i_clk),		
-//				.i_we(MemWrite),
-//				.i_arst(i_arst),
-//				.i_address(RAM_A),
-//				.i_write_data(RAM_WD),
-//				.o_read_data(RAM_RD),
-//				.io_IO(IO),
-//				.bam_output(BAM));
-
 always @(*) begin
 	casex(MemtoReg)
 		1'b0: 
