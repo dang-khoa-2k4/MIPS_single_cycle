@@ -22,7 +22,6 @@
 
 module INST_MEM(
     input [31:0] PC,
-    input clk,
     output reg [31:0] inst
 );
     // 32-bit memory with 1024 words
@@ -31,16 +30,30 @@ module INST_MEM(
 
     initial
     begin
-        $readmemh("instruction.mem", mem);
+        
     end
 
-    always @ (posedge clk)
+    // load memory contents from file
+    initial begin : INIT
+    integer i;
+        for (i=0; i < `INST_MEM_SIZE; i=i+1) begin
+            mem[i] = 32'b0;
+        end
+    $readmemh("instruction.mem", mem);			
+    end
+    
+    reg [31:0] addr;
+    always @ (PC)
     begin
-        // PC is divided by 4 to get the memory address,
-        // because the memory is word addressed
-        // PC : 0x0000_0000 -> mem[0]
-        // PC : 0x0000_0004 -> mem[1]
-        inst <= mem[PC >> 2];
+        addr = PC >> 2;
+        if (addr >= `INST_MEM_SIZE)
+            inst <= 32'b0;
+        else
+            // PC is divided by 4 to get the memory address,
+            // because the memory is word addressed
+            // PC : 0x0000_0000 -> mem[0]
+            // PC : 0x0000_0004 -> mem[1]
+            inst <= mem[addr];
     end
 
 endmodule

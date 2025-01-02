@@ -29,11 +29,11 @@ module PC(
 	output reg [31:0] PCout
 );
 
-	always @(posedge clock) 
+	always @(posedge clock, posedge reset) 
     begin
 		if (reset == 1) 
 			PCout <= 32'b0;
 		else 
-			PCout <= PCin + 4; 
+			PCout <= PCin; 
 	end
 endmodule

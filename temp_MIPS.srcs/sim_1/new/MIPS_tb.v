@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+
+
 module MIPS_tb();
 
     // Testbench signals
@@ -19,7 +21,11 @@ module MIPS_tb();
 
     // Declare PCin as wire (connected to inout)
     wire [31:0] PCin;
-
+    
+    init_tb init(
+            .PC_init(PCin)
+        );
+    
     // Instantiate the MIPS module
     MIPS uut (
         .clock(clock),
@@ -73,4 +79,12 @@ module MIPS_tb();
               PCin ,PCout, inst, ALUOut, Zero);
     end
 
+endmodule
+
+module init_tb(
+    output reg [31 : 0] PC_init
+    );
+    initial begin 
+        PC_init = 0;
+    end 
 endmodule

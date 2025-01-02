@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/temp_MIPS/temp_MIPS.runs/synth_1'
+HD_PWD='C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MIPS.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS.tcl
+EAStep vivado -log MIPS_temp.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS_temp.tcl

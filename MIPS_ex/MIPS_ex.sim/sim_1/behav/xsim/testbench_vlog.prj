@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/ALU.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/MIPS.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/alu_decoder.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/barrel_shifter.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/data_memory.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/main_decoder.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/program_counter.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/register_file.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/rom.v" \
+"../../../../MIPS_ex.srcs/sources_1/imports/src/sign_extender.v" \
+"../../../../MIPS_ex.srcs/sim_1/imports/src/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

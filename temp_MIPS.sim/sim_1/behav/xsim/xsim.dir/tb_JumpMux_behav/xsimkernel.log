@@ -2,3 +2,6 @@ Running: xsim.dir/tb_JumpMux_behav/xsimk.exe -simmode gui -wdb tb_JumpMux_behav.
 Design successfully loaded
 Design Loading Memory Usage: 6792 KB (Peak: 6792 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 7396 KB (Peak: 7396 KB)
+Simulation CPU Usage: 0 ms

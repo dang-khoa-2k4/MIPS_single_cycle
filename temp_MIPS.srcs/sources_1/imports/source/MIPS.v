@@ -23,12 +23,9 @@ module MIPS(
 	input reset;
 
     // Connection of PC
-    output wire [31:0] PCin;  // Tín hi?u PCin ki?u reg
-    output wire [31:0] PCout; // Tín hi?u PCout ki?u wire
-        
-    assign PCin = reset ? 32'b0 : PCin;  // Gán giá tr? 0 cho PCin
+    output wire [31:0] PCin, PCout; 
 
-    
+        
 	PC pc_0(
 		//inputs
 		.clock(clock),
@@ -196,38 +193,38 @@ module MIPS(
     //      .o(PCin)
     //  );
 
-	JumpMux jump_mux_0(
-		//input
-		.addr(inst[25:0]),
-		.PCout(PCout),
-		.Add_ALUOut(Add_ALUOut),
-		.AndGateOut(AndGateOut),
-		.Jump(Jump),
-		//output 
-		.PCin(PCin)
-	);
+//	JumpMux jump_mux_0(
+//		//input
+//		.addr(inst[25:0]),
+//		.PCout(PCout),
+//		.Add_ALUOut(Add_ALUOut),
+//		.AndGateOut(AndGateOut),
+//		.Jump(Jump),
+//		//output 
+//		.PCin(PCin)
+//	);
 
 	//Connection of DataMemory
 	output wire [31:0] ReadData;
-	// data_memory  data_memory_0(
-	// 	//inputs
-	// 	.clk(clock),
-	// 	.memwrite(MemWrite),
-	// 	.memread(MemRead),
-	// 	.address(ALUOut),
-	// 	.write_data(ReadData2),
-	// 	//outputs
-	// 	.read_data(ReadData)
-	// );
-	
-	// mux #(32) mux_4(
-	// //inputs
-	// .i0(ReadData),
-	// .i1(ALUOut),
-    // .select(MemtoReg),
-	// //outputs
-	// .o(WriteData_Reg)
-	// );	
+         data_memory  data_memory_0(
+             //inputs
+             .clk(clock),
+             .memwrite(MemWrite),
+             .memread(MemRead),
+             .address(ALUOut),
+             .write_data(ReadData2),
+             //outputs
+             .read_data(ReadData)
+         );
+        
+         mux #(32) mux_4(
+         //inputs
+         .i0(ReadData),
+         .i1(ALUOut),
+         .select(MemtoReg),
+         //outputs
+         .o(WriteData_Reg)
+         );    
 	
 endmodule
 
