@@ -19,13 +19,13 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module MIPS_temp(i_clk, i_arst, o_instruction, o_pc_cur, o_pc_next);
+module MIPS_temp(i_clk, i_arst, o_instruction);
 
 input i_clk;	// clock signal
 input i_arst;	// reset signal
 output wire [31:0] o_instruction;
-output wire [31:0] o_pc_cur;
-output wire [31:0] o_pc_next;
+ wire [31:0] o_pc_cur;
+ wire [31:0] o_pc_next;
 
 /* Control Signals */
 
@@ -220,5 +220,3 @@ always @(*) begin
 	endcase
 end
 endmodule
-
-

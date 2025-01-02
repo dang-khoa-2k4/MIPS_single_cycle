@@ -19,24 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module testbench;
 
 parameter PERIOD = 10;	// 20	
 
 reg clock;
 reg reset;
-wire [31:0] instr;
-wire [31:0] cur_pc;
-wire [31:0] next_pc;
+
 
 // port map - connection between master ports and signals/registers   
 												
-MIPS_temp MIPS_inst(.i_clk(clock),						
+MIPS_temp uut(.i_clk(clock),						
 		.i_arst(reset),
-		.o_instruction(instr),
-		.o_pc_cur(cur_pc),
-		.o_pc_next(next_pc));
+		.o_instruction(instr));
 
 initial begin
 #10
@@ -52,6 +47,18 @@ initial begin
 
 #300000
     $finish;  
+end
+
+initial begin
+    $monitor("Time=%0t:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", $time,
+            uut.reg_file_inst.registers[0], uut.reg_file_inst.registers[1], uut.reg_file_inst.registers[2], uut.reg_file_inst.registers[3],
+            uut.reg_file_inst.registers[4], uut.reg_file_inst.registers[5], uut.reg_file_inst.registers[6], uut.reg_file_inst.registers[7],
+            uut.reg_file_inst.registers[8], uut.reg_file_inst.registers[9], uut.reg_file_inst.registers[10], uut.reg_file_inst.registers[11],
+            uut.reg_file_inst.registers[12], uut.reg_file_inst.registers[13], uut.reg_file_inst.registers[14], uut.reg_file_inst.registers[15],
+            uut.reg_file_inst.registers[16], uut.reg_file_inst.registers[17], uut.reg_file_inst.registers[18], uut.reg_file_inst.registers[19],
+            uut.reg_file_inst.registers[20], uut.reg_file_inst.registers[21], uut.reg_file_inst.registers[22], uut.reg_file_inst.registers[23],
+            uut.reg_file_inst.registers[24], uut.reg_file_inst.registers[25], uut.reg_file_inst.registers[26], uut.reg_file_inst.registers[27],
+            uut.reg_file_inst.registers[28], uut.reg_file_inst.registers[29], uut.reg_file_inst.registers[30], uut.reg_file_inst.registers[31]);
 end
   
 endmodule
