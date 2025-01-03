@@ -133,18 +133,7 @@ reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_r
 assign REGF_A1 = Instr[25:21];	// rs
 assign REGF_A2 = Instr[20:16];	// rt 
 
-always @(*) begin 
-	casex(LuiSig)
-		1'b0:
-			begin
-				REGF_WD3 = result;
-			end
-		1'b1:
-			begin
-				REGF_WD3 = {Instr[15:0], 16'b0};
-			end
-	endcase
-end 
+assign REGF_WD3 = (LuiSig == 1'b1) ? {Instr[15:0], 16'b0} : result;
 
 always @(*) begin
 	casex(RegDst)

@@ -40,15 +40,6 @@ module Controller(
 
 always @(*) begin
     // Giá trị mặc định cho tất cả tín hiệu
-    RegDst   = 0;
-    ALUSrc   = 0;
-    MemRead  = 0;
-    MemtoReg = 0;
-    MemWrite = 0;
-    Branch   = 0;
-    RegWrite = 0;
-    Jump     = 0;
-    ALUOp    = 2'b00;
 
     // Giải mã opcode
     case (opcode)
@@ -106,7 +97,7 @@ always @(*) begin
             Branch_bne      = 1;
             ALUOp           = 2'b01; // Phép trừ để so sánh
         end 
-        6'001111: begin // lui
+        6'b001111: begin // lui
             RegDst  = 0;
             LuiSig = 1;
             RegWrite = 1;
@@ -118,7 +109,8 @@ always @(*) begin
             MemRead  = 0;
             MemtoReg = 0;
             MemWrite = 0;
-            Branch   = 0;
+            Branch_beq   = 0;
+            Branch_bne   = 0;
             RegWrite = 0;
             Jump     = 0;
             LuiSig   = 0;
