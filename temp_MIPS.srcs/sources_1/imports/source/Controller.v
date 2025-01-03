@@ -30,10 +30,12 @@ module Controller(
     output reg MemRead,        // Cho phép đọc bộ nhớ
     output reg MemtoReg,       // Chọn dữ liệu bộ nhớ ghi vào thanh ghi
     output reg MemWrite,       // Cho phép ghi bộ nhớ
-    output reg Branch,         // Tín hiệu nhảy có điều kiện
+    output reg Branch_beq,      
     output reg RegWrite,       // Cho phép ghi thanh ghi
     output reg Jump,           // Tín hiệu cho lệnh jump
-    output reg [1:0] ALUOp     // Tín hiệu điều khiển ALU
+    output reg [1:0] ALUOp,     // Tín hiệu điều khiển ALU
+    output reg Branch_bne,
+    output reg LuiSig
 );
 
 always @(*) begin
@@ -74,9 +76,9 @@ always @(*) begin
             ALUOp    = 2'b00; // Phép cộng để tính địa chỉ
         end
         6'b000100: begin // beq (Branch if Equal)
-            ALUSrc   = 0;
-            Branch   = 1;
-            ALUOp    = 2'b01; // Phép trừ để so sánh
+            ALUSrc          = 0;
+            Branch_beq      = 1;
+            ALUOp           = 2'b01; // Phép trừ để so sánh
         end
         // Chỉ với 2 biet ALUop không thể truyền được các lệnh đầy đủ các lệnh như add, sub, and, or, slt nên cần truyền OPcode vào cả ALUdecoder
         // để có thể nhận biết được
@@ -98,6 +100,17 @@ always @(*) begin
         6'b000010: begin // j (Jump)
             Jump     = 1;
         end
+        // bonus
+        6'b000101: begin // bne (Branch if Not Equal)
+            ALUSrc          = 0;
+            Branch_bne      = 1;
+            ALUOp           = 2'b01; // Phép trừ để so sánh
+        end 
+        6'001111: begin // lui
+            RegDst  = 0;
+            LuiSig = 1;
+            RegWrite = 1;
+        end 
         default: begin
             // Mặc định tất cả tín hiệu là 0
             RegDst   = 0;
@@ -108,6 +121,7 @@ always @(*) begin
             Branch   = 0;
             RegWrite = 0;
             Jump     = 0;
+            LuiSig   = 0;
             ALUOp    = 2'b00;
         end
     endcase

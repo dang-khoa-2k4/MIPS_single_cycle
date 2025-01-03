@@ -22,3 +22,4 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ADMIN/OneDrive - hcmut.edu
 INFO: [VRFC 10-311] analyzing module registers
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2458] undeclared symbol instr, assumed default net type wire [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:34]

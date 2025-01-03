@@ -24,25 +24,23 @@ module MIPS_temp(i_clk, i_arst, o_instruction);
 input i_clk;	// clock signal
 input i_arst;	// reset signal
 output wire [31:0] o_instruction;
- wire [31:0] o_pc_cur;
- wire [31:0] o_pc_next;
-
 /* Control Signals */
 
 wire MemtoReg;
 wire MemWrite;
 wire MemRead;
 wire Branch_beq;
+wire Branch_bne;
+wire LuiSig;
 wire [3:0] ALUControl;
 wire ALUSrc;
 wire RegDst;
 wire RegWrite;
-wire Shift;
 wire Jump;
 wire Zero;						// from ALU
 wire PCSrc;						// combinational logic
 wire [1:0] ALUop;
-assign PCSrc = (Branch_beq & Zero);
+assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
 
 /* End of Control Signals */
 
@@ -58,9 +56,7 @@ assign ROM_A = pc_current;				// PC --> A
 
 // -----------> 
 
-	assign o_instruction = Instr;
-	assign o_pc_cur = pc_current;
-	assign o_pc_next = pc_next;
+assign o_instruction = Instr;
 
 INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
 		.inst(Instr));
@@ -111,17 +107,18 @@ Controller main_control_inst(
 				.MemRead(MemRead),
 				.MemtoReg(MemtoReg),
 				.MemWrite(MemWrite),
-				.Branch(Branch_beq),
+				.Branch_beq(Branch_beq),
+				.Branch_bne(Branch_bne),
 				.RegWrite(RegWrite),
 				.Jump(Jump),
-				.ALUOp(ALUop)
+				.ALUOp(ALUop),
+				.LuiSig(LuiSig)
 			);
 
 ALU_decoder alu_control_inst( /* ALU Control */
                 .ALUOp(ALUop),	
 				.funct(Instr[5:0]),
 				.opcode(Instr[31:26]),
-				// .o_shift(Shift),
 				.ALUControl(ALUControl));
 
 wire [4:0] REGF_A1;	
@@ -135,7 +132,19 @@ reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_r
 
 assign REGF_A1 = Instr[25:21];	// rs
 assign REGF_A2 = Instr[20:16];	// rt 
-assign REGF_WD3 = result;
+
+always @(*) begin 
+	casex(LuiSig)
+		1'b0:
+			begin
+				REGF_WD3 = result;
+			end
+		1'b1:
+			begin
+				REGF_WD3 = {Instr[15:0], 16'b0};
+			end
+	endcase
+end 
 
 always @(*) begin
 	casex(RegDst)
@@ -153,7 +162,6 @@ end
 registers reg_file_inst(
 				.clk(i_clk),		/* Register File */
 				.regwrite(RegWrite),
-				// .reset(i_arst),
 				.read_reg1(REGF_A1),
 				.read_reg2(REGF_A2),
 				.write_reg(REGF_A3),
@@ -197,11 +205,8 @@ assign RAM_A = alu_result;
 assign RAM_WD = REGF_RD2;
 
 /* Data Memory, RAM */
-
-
 data_memory data_memory_inst(.clk(i_clk),		
 				.memwrite(MemWrite),
-				// .i_arst(i_arst),
 				.address(RAM_A),
 				.write_data(RAM_WD),
 				.read_data(RAM_RD));

@@ -41,6 +41,9 @@ always @(*) begin
                 6'b100000: ALUControl = 4'b0010; // ADD
                 6'b100010: ALUControl = 4'b0110; // SUB
                 6'b101010: ALUControl = 4'b0111; // SLT
+                6'b100111: ALUControl = 4'b1100; // NOR
+                6'b000000: ALUControl = 4'b1000; // SLL
+                6'b000010: ALUControl = 4'b1001; // SRL
                 default:   ALUControl = 4'bxxxx; // Undefined
             endcase
         end
