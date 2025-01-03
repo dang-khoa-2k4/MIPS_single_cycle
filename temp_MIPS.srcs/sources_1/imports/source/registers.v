@@ -14,9 +14,14 @@ module registers (
 
     output wire [31:0] read_data1, read_data2
 );
-    reg [31:0] registers [31:0]; // 32 thanh ghi 32-bit
+reg [31:0] registers [31:0]; // 32 thanh ghi 32-bit
 
-    
+integer i;
+initial begin
+    for (i = 0; i < 32; i = i + 1)
+        registers[i] = 32'b0; 
+end
+
 
     // nếu là $zero thì ko đc ghi vào
     always @(posedge clk) begin

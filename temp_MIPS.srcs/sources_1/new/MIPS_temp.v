@@ -129,18 +129,10 @@ wire [31:0] REGF_RD1;
 wire [31:0] REGF_RD2;
 reg [31:0] REGF_WD3;
 
-    reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_result, if = [1] -> result = RAM_RD
-    
-    assign REGF_A1 = Instr[25:21];	// rs
-    assign REGF_A2 = Instr[20:16];	// rt 
-    
-    always @(*) begin
-        if (LuiSig == 1) begin
-            REGF_WD3 = {Instr[15:0], 16'b0};
-        end else begin
-            REGF_WD3 = result;
-        end
-    end
+reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_result, if = [1] -> result = RAM_RD
+
+assign REGF_A1 = Instr[25:21];	// rs
+assign REGF_A2 = Instr[20:16];	// rt 
 
     //assign REGF_WD3 = result;
 
@@ -219,6 +211,19 @@ always @(*) begin
 		1'b1:
 			begin
 				result = RAM_RD;
+			end
+	endcase
+end
+
+always @(result) begin
+	casex (LuiSig)
+		1'b0:
+			begin
+				REGF_WD3 = result;
+			end
+		1'b1:
+			begin
+				REGF_WD3 = {Instr[15:0], 16'b0};
 			end
 	endcase
 end
