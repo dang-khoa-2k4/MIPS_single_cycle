@@ -58,8 +58,8 @@ assign ROM_A = pc_current;				// PC --> A
 
 assign o_instruction = Instr;
 
-(* keep *) INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
-			.inst(Instr));
+INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
+		.inst(Instr));
 
 wire [31:0] sign_imm;					// sign extended Immediate (Instr [15:0])
 wire [31:0] shifted_sign_imm;					// sign_imm << 2
@@ -92,15 +92,15 @@ always @(*) begin
 	endcase
 end
 							
-(* keep *) PC pc_inst(.clock(i_clk),			/* Programm Counter */
+PC pc_inst(.clock(i_clk),			/* Programm Counter */
 			.reset(i_arst),
 			.PCin(pc_next),
 			.PCout(pc_current));
 
-(* keep *) sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
+sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
 				.o(sign_imm));	
 
-(* keep *) Controller main_control_inst(
+Controller main_control_inst(
 				.opcode(Instr[31:26]), /* Main Control */
 				.RegDst(RegDst),
 				.ALUSrc(ALUSrc),
@@ -115,7 +115,7 @@ end
 				.LuiSig(LuiSig)
 			);
 
-(* keep *) ALU_decoder alu_control_inst( /* ALU Control */
+ALU_decoder alu_control_inst( /* ALU Control */
                 .ALUOp(ALUop),	
 				.funct(Instr[5:0]),
 				.opcode(Instr[31:26]),
@@ -124,16 +124,25 @@ end
 wire [4:0] REGF_A1;	
 wire [4:0] REGF_A2;
 reg [4:0] REGF_A3;
-wire [31:0] REGF_WD3;
+
 wire [31:0] REGF_RD1;
 wire [31:0] REGF_RD2;
+reg [31:0] REGF_WD3;
 
-reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_result, if = [1] -> result = RAM_RD
+    reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_result, if = [1] -> result = RAM_RD
+    
+    assign REGF_A1 = Instr[25:21];	// rs
+    assign REGF_A2 = Instr[20:16];	// rt 
+    
+    always @(*) begin
+        if (LuiSig == 1) begin
+            REGF_WD3 = {Instr[15:0], 16'b0};
+        end else begin
+            REGF_WD3 = result;
+        end
+    end
 
-assign REGF_A1 = Instr[25:21];	// rs
-assign REGF_A2 = Instr[20:16];	// rt 
-
-assign REGF_WD3 = (LuiSig == 1'b1) ? {Instr[15:0], 16'b0} : result;
+    //assign REGF_WD3 = result;
 
 always @(*) begin
 	casex(RegDst)
@@ -148,7 +157,7 @@ always @(*) begin
 	endcase
 end
 
-(* keep *) registers reg_file_inst(
+registers reg_file_inst(
 				.clk(i_clk),		/* Register File */
 				.regwrite(RegWrite),
 				.read_reg1(REGF_A1),
@@ -180,7 +189,7 @@ always @(*) begin
 	endcase
 end
 
-(* keep *) ALU alu_inst(.i_data_A(srcA),				/* ALU */
+ALU alu_inst(.i_data_A(srcA),				/* ALU */
 		.i_data_B(srcB),
 		.i_alu_control(ALUControl),
 		.o_zero_flag(Zero),
@@ -194,7 +203,7 @@ assign RAM_A = alu_result;
 assign RAM_WD = REGF_RD2;
 
 /* Data Memory, RAM */
-(* keep *) data_memory data_memory_inst(.clk(i_clk),		
+data_memory data_memory_inst(.clk(i_clk),		
 				.memwrite(MemWrite),
 				.address(RAM_A),
 				.write_data(RAM_WD),

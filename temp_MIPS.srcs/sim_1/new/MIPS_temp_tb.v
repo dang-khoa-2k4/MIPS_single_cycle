@@ -21,7 +21,7 @@
 
 module testbench;
 
-parameter PERIOD = 10;	// 20	
+parameter PERIOD = 20;	// 20	
 
 reg clock;
 reg reset;
