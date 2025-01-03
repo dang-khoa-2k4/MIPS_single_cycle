@@ -25,21 +25,31 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Controller(
     input  [5:0] opcode,       // Opcode đầu vào (Instruction [31:26])
-    output reg RegDst,         // Chọn thanh ghi đích
-    output reg ALUSrc,         // Chọn nguồn cho ALU
-    output reg MemRead,        // Cho phép đọc bộ nhớ
-    output reg MemtoReg,       // Chọn dữ liệu bộ nhớ ghi vào thanh ghi
+    output reg RegDst,         // Ch�?n thanh ghi đích
+    output reg ALUSrc,         // Ch�?n nguồn cho ALU
+    output reg MemRead,        // Cho phép đ�?c bộ nhớ
+    output reg MemtoReg,       // Ch�?n dữ liệu bộ nhớ ghi vào thanh ghi
     output reg MemWrite,       // Cho phép ghi bộ nhớ
     output reg Branch_beq,      
     output reg RegWrite,       // Cho phép ghi thanh ghi
     output reg Jump,           // Tín hiệu cho lệnh jump
-    output reg [1:0] ALUOp,     // Tín hiệu điều khiển ALU
+    output reg [1:0] ALUOp,     // Tín hiệu đi�?u khiển ALU
     output reg Branch_bne,
     output reg LuiSig
 );
 
 always @(*) begin
-    // Giá trị mặc định cho tất cả tín hiệu
+            RegDst   = 0;
+           ALUSrc   = 0;
+           MemRead  = 0;
+           MemtoReg = 0;
+           MemWrite = 0;
+           Branch_beq   = 0;
+           Branch_bne   = 0;
+           RegWrite = 0;
+           Jump     = 0;
+           LuiSig   = 0;
+           ALUOp    = 2'b00;
 
     // Giải mã opcode
     case (opcode)
@@ -71,7 +81,7 @@ always @(*) begin
             Branch_beq      = 1;
             ALUOp           = 2'b01; // Phép trừ để so sánh
         end
-        // Chỉ với 2 biet ALUop không thể truyền được các lệnh đầy đủ các lệnh như add, sub, and, or, slt nên cần truyền OPcode vào cả ALUdecoder
+        // Chỉ với 2 biet ALUop không thể truy�?n được các lệnh đầy đủ các lệnh như add, sub, and, or, slt nên cần truy�?n OPcode vào cả ALUdecoder
         // để có thể nhận biết được
         6'b001100: begin // andi (AND Immediate)
             ALUSrc   = 1;
