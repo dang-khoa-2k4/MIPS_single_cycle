@@ -25,7 +25,7 @@ parameter PERIOD = 20;	// 20
 
 reg clock;
 reg reset;
-
+wire [31:0] instr;
 
 // port map - connection between master ports and signals/registers   
 												
@@ -34,7 +34,6 @@ MIPS uut(.i_clk(clock),
 		.o_instruction(instr));
 
 initial begin
-#10
     clock = 0;
     forever #(PERIOD/2) clock = ~clock;
 end

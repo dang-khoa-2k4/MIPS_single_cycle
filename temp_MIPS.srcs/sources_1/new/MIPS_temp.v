@@ -194,6 +194,7 @@ assign RAM_WD = read_data_2;
 /* Data Memory, RAM */
 (* keep *)data_memory data_memory_inst(.clk(i_clk),		
 				.memwrite(MemWrite),
+				.memread(MemRead),
 				.address(RAM_A),
 				.write_data(RAM_WD),
 				.read_data(RAM_RD));
@@ -212,7 +213,7 @@ always @(*) begin
 	endcase
 end
 
-always @(result) begin
+always @(*) begin
 	casex (LuiSig)
 		1'b0:
 			begin
@@ -224,4 +225,5 @@ always @(result) begin
 			end
 	endcase
 end
+
 endmodule

@@ -9,7 +9,7 @@
 module data_memory (
     input clk,                   // Clock signal
     input memwrite,              // Memory write enable signal
-    input memread,               // Memory read enable signal (not actually needed here)
+    input memread,               // Memory read enable signal
     input [31:0] address,        // 32-bit memory address
     input [31:0] write_data,     // Data to write into memory
 
@@ -25,8 +25,15 @@ module data_memory (
         end
     end
 
-    wire [29:0] addr;
-    assign addr = address[31:2]; // Right-shift the address by 2 bits (divide by 4)
+    // Check address alignment
+    always @(posedge clk) begin
+        if ((memread || memwrite) && address[1:0] != 2'b00) begin
+//            $error("Address not aligned on word boundary 0x%h", address);
+            $stop;
+        end
+    end
+    
+    wire [29:0] addr = address[31:2];
 
     // Assign read_data only when addr is within valid range
     assign read_data = (addr < 64) ? memory[addr] : 0;
