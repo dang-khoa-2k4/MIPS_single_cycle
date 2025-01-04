@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"testbench_func_synth.v" \
+"../../../../../temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v" \
+"../../../../../temp_MIPS.srcs/sim_1/new/pc_inst_tb.v" \
+
+# Do not sort compile order
+nosort

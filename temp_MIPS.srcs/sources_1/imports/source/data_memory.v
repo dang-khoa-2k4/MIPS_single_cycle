@@ -26,6 +26,14 @@ module data_memory (
     end
 
     wire [29:0] addr;
+
+    always @(posedge clk) begin
+        if ((memread || memwrite) & address[1:0] != 2'b00) begin
+            $error("Address not aligned on word boundary %h", address);
+            $stop;
+        end
+    end
+
     assign addr = address[31:2]; // Right-shift the address by 2 bits (divide by 4)
 
     // Assign read_data only when addr is within valid range

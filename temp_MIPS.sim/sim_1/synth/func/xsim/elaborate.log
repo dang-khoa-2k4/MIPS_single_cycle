@@ -1,0 +1,18 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto a726b6560cbb4f9b92ef42dc1025ddbd --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot testbench_func_synth xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:55]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:56]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:57]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:58]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:59]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:60]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:61]
+ERROR: [VRFC 10-93] registers is not declared under prefix reg_file_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:62]
+ERROR: [VRFC 10-93] memory is not declared under prefix data_memory_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:63]
+ERROR: [VRFC 10-93] memory is not declared under prefix data_memory_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:64]
+ERROR: [VRFC 10-93] memory is not declared under prefix data_memory_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:65]
+ERROR: [VRFC 10-93] memory is not declared under prefix data_memory_inst [C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v:66]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
