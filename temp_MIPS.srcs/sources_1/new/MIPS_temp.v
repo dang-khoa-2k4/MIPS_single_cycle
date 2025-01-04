@@ -32,7 +32,6 @@ output wire [31:0] o_instruction;
 (* keep *)wire Branch_beq;
 (* keep *)wire Branch_bne;
 (* keep *)wire LuiSig;
-(* keep *)wire [3:0] ALUControl;
 (* keep *)wire ALUSrc;
 (* keep *)wire RegDst;
 (* keep *)wire RegWrite;
@@ -40,11 +39,11 @@ output wire [31:0] o_instruction;
 (* keep *)wire Zero;						// from ALU
 (* keep *)wire PCSrc;						// combinational logic
 (* keep *)wire [1:0] ALUop;
-assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
+(* keep *)wire [3:0] ALUControl;
 
 /* End of Control Signals */
 
-(* keep *)reg [31:0] pc_next;					 	// PC'
+(* keep *)reg  [31:0] pc_next;					 	// PC'
 (* keep *)wire [31:0] pc_current;					// PC
 (* keep *)wire [31:0] pc_plus4;					// PC + 4
 (* keep *)wire [31:0] pc_branch;					// PCBranch = PC + 4 + (SignedImm * 4)
@@ -61,15 +60,15 @@ assign o_instruction = Instr;
 (* keep *)INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
 		.inst(Instr));
 
-(* keep *)wire [31:0] sign_imm;					// sign extended Immediate (Instr [15:0])
-(* keep *)wire [31:0] shifted_sign_imm;					// sign_imm << 2
+(* keep *)wire [31:0] sign_imm;						// sign extended Immediate (Instr [15:0])
+(* keep *)wire [31:0] shifted_sign_imm;				// sign_imm << 2
+
 assign shifted_sign_imm = {sign_imm[29:0], 2'b00};	// sign_imm << 2
-
-assign pc_plus4 = pc_current + 32'd4;			// PC + 4
+assign pc_plus4 = pc_current + 32'd4;				// PC + 4
 assign pc_branch = pc_plus4 + shifted_sign_imm;		// PCBranch = PC + 4 + (SignedImm * 4)
+assign pc_jump = {pc_plus4[31:28], Instr[25:0], 2'b00};		// jump address
 
-assign pc_jump = {pc_plus4[31:28], Instr[25:0], 2'b00};	// jump address
-
+assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
 always @(*) begin
 	casex(Jump)
 		1'b0:
@@ -121,30 +120,30 @@ end
 				.opcode(Instr[31:26]),
 				.ALUControl(ALUControl));
 
-(* keep *)wire [4:0] REGF_A1;	
-(* keep *)wire [4:0] REGF_A2;
-(* keep *)reg [4:0] REGF_A3;
-(* keep *)wire [31:0] REGF_RD1;
-(* keep *)wire [31:0] REGF_RD2;
-(* keep *)reg [31:0] REGF_WD3;
+(* keep *)wire [4:0] read_reg_1;	
+(* keep *)wire [4:0] read_reg_2;
+(* keep *)reg [4:0] write_reg;
+(* keep *)wire [31:0] read_data_1;
+(* keep *)wire [31:0] read_data_2;
+(* keep *)reg [31:0] write_data;
 
 // result: controlls by MemtoReg: 
 //if = [0] -> result = alu_result, 
 //if = [1] -> result = RAM_RD
 (* keep *)reg [31:0] result;		
 
-assign REGF_A1 = Instr[25:21];	// rs
-assign REGF_A2 = Instr[20:16];	// rt 
+assign read_reg_1 = Instr[25:21];	// rs
+assign read_reg_2 = Instr[20:16];	// rt 
 
 always @(*) begin
 	casex(RegDst)
 		1'b0:
 			begin
-				REGF_A3 = Instr[20:16];	// rt 
+				write_reg = Instr[20:16];	// rt 
 			end
 		1'b1:
 			begin
-				REGF_A3 = Instr[15:11];	// rd
+				write_reg = Instr[15:11];	// rd
 			end
 	endcase
 end
@@ -152,27 +151,25 @@ end
 (* keep *)registers reg_file_inst(
 				.clk(i_clk),		/* Register File */
 				.regwrite(RegWrite),
-				.read_reg1(REGF_A1),
-				.read_reg2(REGF_A2),
-				.write_reg(REGF_A3),
-				.write_data(REGF_WD3),
-				.read_data1(REGF_RD1),
-				.read_data2(REGF_RD2)
+				.read_reg1(read_reg_1),
+				.read_reg2(read_reg_2),
+				.write_reg(write_reg),
+				.write_data(write_data),
+				.read_data1(read_data_1),
+				.read_data2(read_data_2)
 			);
 
 (* keep *)reg [31:0] srcA;
 (* keep *)reg [31:0] srcB;
 (* keep *)wire [31:0] alu_result;
 
-always @(*) begin	
-	srcA = REGF_RD1;
-end
 
 always @(*) begin
+	srcA = read_data_1;
 	casex(ALUSrc)
 		1'b0:
 			begin
-				srcB = REGF_RD2;
+				srcB = read_data_2;
 			end
 		1'b1:	
 			begin
@@ -192,7 +189,7 @@ end
 (* keep *)wire [31:0] RAM_RD;
 
 assign RAM_A = alu_result;
-assign RAM_WD = REGF_RD2;
+assign RAM_WD = read_data_2;
 
 /* Data Memory, RAM */
 (* keep *)data_memory data_memory_inst(.clk(i_clk),		
@@ -219,11 +216,11 @@ always @(result) begin
 	casex (LuiSig)
 		1'b0:
 			begin
-				REGF_WD3 = result;
+				write_data = result;
 			end
 		1'b1:
 			begin
-				REGF_WD3 = {Instr[15:0], 16'b0};
+				write_data = {Instr[15:0], 16'b0};
 			end
 	endcase
 end
