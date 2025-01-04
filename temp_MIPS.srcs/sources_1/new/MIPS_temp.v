@@ -212,7 +212,7 @@ always @(*) begin
 	endcase
 end
 
-always @(result) begin
+always @(*) begin
 	casex (LuiSig)
 		1'b0:
 			begin
