@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1735831881">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1735923678">
   <File Type="PA-TCL" Name="MIPS_temp.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="MIPS_temp_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MIPS_temp_reports.tcl"/>
   <File Type="RDS-RDS" Name="MIPS_temp.vds"/>
   <File Type="RDS-UTIL" Name="MIPS_temp_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MIPS_temp_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="MIPS_temp.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_temp_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MIPS_temp_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/source/ALU.v">

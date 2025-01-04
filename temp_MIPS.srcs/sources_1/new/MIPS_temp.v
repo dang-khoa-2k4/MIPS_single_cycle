@@ -58,7 +58,7 @@ assign ROM_A = pc_current;				// PC --> A
 
 assign o_instruction = Instr;
 
-INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
+(* keep *)INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
 		.inst(Instr));
 
 wire [31:0] sign_imm;					// sign extended Immediate (Instr [15:0])
@@ -92,15 +92,15 @@ always @(*) begin
 	endcase
 end
 							
-PC pc_inst(.clock(i_clk),			/* Programm Counter */
+(* keep *)PC pc_inst(.clock(i_clk),			/* Programm Counter */
 			.reset(i_arst),
 			.PCin(pc_next),
 			.PCout(pc_current));
 
-sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
+(* keep *)sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
 				.o(sign_imm));	
 
-Controller main_control_inst(
+(* keep *)Controller main_control_inst(
 				.opcode(Instr[31:26]), /* Main Control */
 				.RegDst(RegDst),
 				.ALUSrc(ALUSrc),
@@ -115,7 +115,7 @@ Controller main_control_inst(
 				.LuiSig(LuiSig)
 			);
 
-ALU_decoder alu_control_inst( /* ALU Control */
+(* keep *)ALU_decoder alu_control_inst( /* ALU Control */
                 .ALUOp(ALUop),	
 				.funct(Instr[5:0]),
 				.opcode(Instr[31:26]),
@@ -149,7 +149,7 @@ always @(*) begin
 	endcase
 end
 
-registers reg_file_inst(
+(* keep *)registers reg_file_inst(
 				.clk(i_clk),		/* Register File */
 				.regwrite(RegWrite),
 				.read_reg1(REGF_A1),
@@ -181,7 +181,7 @@ always @(*) begin
 	endcase
 end
 
-ALU alu_inst(.i_data_A(srcA),				/* ALU */
+(* keep *)ALU alu_inst(.i_data_A(srcA),				/* ALU */
 		.i_data_B(srcB),
 		.i_alu_control(ALUControl),
 		.o_zero_flag(Zero),
@@ -195,7 +195,7 @@ assign RAM_A = alu_result;
 assign RAM_WD = REGF_RD2;
 
 /* Data Memory, RAM */
-data_memory data_memory_inst(.clk(i_clk),		
+(* keep *)data_memory data_memory_inst(.clk(i_clk),		
 				.memwrite(MemWrite),
 				.address(RAM_A),
 				.write_data(RAM_WD),
