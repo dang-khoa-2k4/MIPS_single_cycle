@@ -16,7 +16,7 @@ Compiling module xil_defaultlib.ALU_decoder
 Compiling module xil_defaultlib.registers
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.data_memory
-Compiling module xil_defaultlib.MIPS_temp
+Compiling module xil_defaultlib.MIPS
 Compiling module xil_defaultlib.testbench
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot testbench_behav

@@ -24,96 +24,94 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module Controller(
-    input  [5:0] opcode,       // Opcode đầu vào (Instruction [31:26])
-    output reg RegDst,         // Ch�?n thanh ghi đích
-    output reg ALUSrc,         // Ch�?n nguồn cho ALU
-    output reg MemRead,        // Cho phép đ�?c bộ nhớ
-    output reg MemtoReg,       // Ch�?n dữ liệu bộ nhớ ghi vào thanh ghi
-    output reg MemWrite,       // Cho phép ghi bộ nhớ
-    output reg Branch_beq,      
-    output reg RegWrite,       // Cho phép ghi thanh ghi
-    output reg Jump,           // Tín hiệu cho lệnh jump
-    output reg [1:0] ALUOp,     // Tín hiệu đi�?u khiển ALU
-    output reg Branch_bne,
-    output reg LuiSig
+    input  [5:0] opcode,       // Input opcode (Instruction [31:26])
+    output reg RegDst,         // Select destination register
+    output reg ALUSrc,         // Select source for ALU
+    output reg MemRead,        // Enable memory read
+    output reg MemtoReg,       // Select memory data to write to register
+    output reg MemWrite,       // Enable memory write
+    output reg Branch_beq,     // Enable branch if equal
+    output reg RegWrite,       // Enable register write
+    output reg Jump,           // Jump signal
+    output reg [1:0] ALUOp,    // ALU control signal
+    output reg Branch_bne,     // Enable branch if not equal
+    output reg LuiSig          // Enable Load Upper Immediate signal
 );
 
 always @(*) begin
-            RegDst   = 0;
-           ALUSrc   = 0;
-           MemRead  = 0;
-           MemtoReg = 0;
-           MemWrite = 0;
-           Branch_beq   = 0;
-           Branch_bne   = 0;
-           RegWrite = 0;
-           Jump     = 0;
-           LuiSig   = 0;
-           ALUOp    = 2'b00;
+    // Default values for all signals
+    RegDst   = 0;
+    ALUSrc   = 0;
+    MemRead  = 0;
+    MemtoReg = 0;
+    MemWrite = 0;
+    Branch_beq   = 0;
+    Branch_bne   = 0;
+    RegWrite = 0;
+    Jump     = 0;
+    LuiSig   = 0;
+    ALUOp    = 2'b00;
 
-    // Giải mã opcode
+    // Decode opcode
     case (opcode)
         6'b000000: begin // R-Type: add, sub, and, or, nor, slt
             RegDst   = 1;
             ALUSrc   = 0;
             RegWrite = 1;
-            ALUOp    = 2'b10; // Dùng funct để giải mã
+            ALUOp    = 2'b10; // Use funct field to determine operation
         end
         6'b001000: begin // addi (Add Immediate)
             ALUSrc   = 1;
             RegWrite = 1;
-            ALUOp    = 2'b00; // Phép cộng
+            ALUOp    = 2'b00; // Perform addition
         end
         6'b100011: begin // lw (Load Word)
             ALUSrc   = 1;
             MemRead  = 1;
             MemtoReg = 1;
             RegWrite = 1;
-            ALUOp    = 2'b00; // Phép cộng để tính địa chỉ
+            ALUOp    = 2'b00; // Perform addition for address calculation
         end
         6'b101011: begin // sw (Store Word)
             ALUSrc   = 1;
             MemWrite = 1;
-            ALUOp    = 2'b00; // Phép cộng để tính địa chỉ
+            ALUOp    = 2'b00; // Perform addition for address calculation
         end
         6'b000100: begin // beq (Branch if Equal)
-            ALUSrc          = 0;
-            Branch_beq      = 1;
-            ALUOp           = 2'b01; // Phép trừ để so sánh
+            ALUSrc   = 0;
+            Branch_beq = 1;
+            ALUOp    = 2'b01; // Perform subtraction for comparison
         end
-        // Chỉ với 2 biet ALUop không thể truy�?n được các lệnh đầy đủ các lệnh như add, sub, and, or, slt nên cần truy�?n OPcode vào cả ALUdecoder
-        // để có thể nhận biết được
         6'b001100: begin // andi (AND Immediate)
             ALUSrc   = 1;
             RegWrite = 1;
-            ALUOp    = 2'b11; // Phép AND 
+            ALUOp    = 2'b11; // Perform AND operation
         end
         6'b001101: begin // ori (OR Immediate)
             ALUSrc   = 1;
             RegWrite = 1;
-            ALUOp    = 2'b11; // Phép OR
+            ALUOp    = 2'b11; // Perform OR operation
         end
         6'b001010: begin // slti (Set Less Than Immediate)
             ALUSrc   = 1;
             RegWrite = 1;
-            ALUOp    = 2'b11; // Phép SLT
+            ALUOp    = 2'b11; // Perform SLT operation
         end
         6'b000010: begin // j (Jump)
             Jump     = 1;
         end
-        // bonus
         6'b000101: begin // bne (Branch if Not Equal)
-            ALUSrc          = 0;
-            Branch_bne      = 1;
-            ALUOp           = 2'b01; // Phép trừ để so sánh
-        end 
-        6'b001111: begin // lui
-            RegDst  = 0;
-            LuiSig = 1;
+            ALUSrc   = 0;
+            Branch_bne = 1;
+            ALUOp    = 2'b01; // Perform subtraction for comparison
+        end
+        6'b001111: begin // lui (Load Upper Immediate)
+            RegDst   = 0;
+            LuiSig   = 1;
             RegWrite = 1;
-        end 
+        end
         default: begin
-            // Mặc định tất cả tín hiệu là 0
+            // Default: all control signals are 0
             RegDst   = 0;
             ALUSrc   = 0;
             MemRead  = 0;

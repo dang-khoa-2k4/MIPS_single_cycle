@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Jan  4 00:01:21 2025
-# Process ID: 28880
+# Start of session at: Sat Jan  4 10:18:38 2025
+# Process ID: 21932
 # Current directory: C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1
-# Command line: vivado.exe -log MIPS_temp.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS_temp.tcl
-# Log file: C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1/MIPS_temp.vds
+# Command line: vivado.exe -log MIPS.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS.tcl
+# Log file: C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1/MIPS.vds
 # Journal file: C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source MIPS_temp.tcl -notrace
+source MIPS.tcl -notrace

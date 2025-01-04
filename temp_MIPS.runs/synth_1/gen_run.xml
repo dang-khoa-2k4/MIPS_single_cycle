@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1735923678">
-  <File Type="PA-TCL" Name="MIPS_temp.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MIPS_temp_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="MIPS_temp_reports.tcl"/>
-  <File Type="RDS-RDS" Name="MIPS_temp.vds"/>
-  <File Type="RDS-UTIL" Name="MIPS_temp_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="MIPS_temp_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="MIPS_temp.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_temp_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MIPS_temp_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1735960717">
+  <File Type="PA-TCL" Name="MIPS.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="MIPS_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="MIPS_reports.tcl"/>
+  <File Type="RDS-RDS" Name="MIPS.vds"/>
+  <File Type="RDS-UTIL" Name="MIPS_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="MIPS_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="MIPS.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MIPS_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/MIPS_temp.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/source/ALU.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/ALU.v"/>
@@ -65,10 +72,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/others.v">
+    <File Path="$PSRCDIR/sources_1/new/others.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/others.v"/>
-        <Attr Name="ImportTime" Val="1735714030"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -83,54 +88,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MIPS_temp.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/Add_ALU.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/Add_ALU.v"/>
-        <Attr Name="ImportTime" Val="1735617477"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/MIPS.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/MIPS.v"/>
-        <Attr Name="ImportTime" Val="1735713418"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/jump_addr.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/jump_addr.v"/>
-        <Attr Name="ImportTime" Val="1735618843"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/jump_mux.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="MIPS_temp"/>
+      <Option Name="TopModule" Val="MIPS"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

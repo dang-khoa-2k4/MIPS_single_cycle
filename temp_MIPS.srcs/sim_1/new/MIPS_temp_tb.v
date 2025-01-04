@@ -29,7 +29,7 @@ reg reset;
 
 // port map - connection between master ports and signals/registers   
 												
-MIPS_temp uut(.i_clk(clock),						
+MIPS uut(.i_clk(clock),						
 		.i_arst(reset),
 		.o_instruction(instr));
 

@@ -5,7 +5,7 @@
 // 
 // Create Date: 01/02/2025 10:19:45 AM
 // Design Name: 
-// Module Name: MIPS_temp
+// Module Name: MIPS
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,39 +19,39 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module MIPS_temp(i_clk, i_arst, o_instruction);
+module MIPS(i_clk, i_arst, o_instruction);
 
 input i_clk;	// clock signal
 input i_arst;	// reset signal
 output wire [31:0] o_instruction;
 /* Control Signals */
 
-wire MemtoReg;
-wire MemWrite;
-wire MemRead;
-wire Branch_beq;
-wire Branch_bne;
-wire LuiSig;
-wire [3:0] ALUControl;
-wire ALUSrc;
-wire RegDst;
-wire RegWrite;
-wire Jump;
-wire Zero;						// from ALU
-wire PCSrc;						// combinational logic
-wire [1:0] ALUop;
+(* keep *)wire MemWrite;
+(* keep *)wire MemtoReg;
+(* keep *)wire MemRead;
+(* keep *)wire Branch_beq;
+(* keep *)wire Branch_bne;
+(* keep *)wire LuiSig;
+(* keep *)wire [3:0] ALUControl;
+(* keep *)wire ALUSrc;
+(* keep *)wire RegDst;
+(* keep *)wire RegWrite;
+(* keep *)wire Jump;
+(* keep *)wire Zero;						// from ALU
+(* keep *)wire PCSrc;						// combinational logic
+(* keep *)wire [1:0] ALUop;
 assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
 
 /* End of Control Signals */
 
-reg [31:0] pc_next;					 	// PC'
-wire [31:0] pc_current;					// PC
-wire [31:0] pc_plus4;					// PC + 4
-wire [31:0] pc_branch;					// PCBranch = PC + 4 + (SignedImm * 4)
-wire [31:0] pc_jump;					// jump address
+(* keep *)reg [31:0] pc_next;					 	// PC'
+(* keep *)wire [31:0] pc_current;					// PC
+(* keep *)wire [31:0] pc_plus4;					// PC + 4
+(* keep *)wire [31:0] pc_branch;					// PCBranch = PC + 4 + (SignedImm * 4)
+(* keep *)wire [31:0] pc_jump;					// jump address
 
-wire [31:0] ROM_A;						// input Address for Instruction memory
-wire [31:0] Instr;						// read Instruction, from Instruction memory
+(* keep *)wire [31:0] ROM_A;						// input Address for Instruction memory
+(* keep *)wire [31:0] Instr;						// read Instruction, from Instruction memory
 assign ROM_A = pc_current;				// PC --> A
 
 // -----------> 
@@ -61,8 +61,8 @@ assign o_instruction = Instr;
 (* keep *)INST_MEM rom_inst(.PC(ROM_A),				/* Instruction Memory, ROM */
 		.inst(Instr));
 
-wire [31:0] sign_imm;					// sign extended Immediate (Instr [15:0])
-wire [31:0] shifted_sign_imm;					// sign_imm << 2
+(* keep *)wire [31:0] sign_imm;					// sign extended Immediate (Instr [15:0])
+(* keep *)wire [31:0] shifted_sign_imm;					// sign_imm << 2
 assign shifted_sign_imm = {sign_imm[29:0], 2'b00};	// sign_imm << 2
 
 assign pc_plus4 = pc_current + 32'd4;			// PC + 4
@@ -121,20 +121,20 @@ end
 				.opcode(Instr[31:26]),
 				.ALUControl(ALUControl));
 
-wire [4:0] REGF_A1;	
-wire [4:0] REGF_A2;
-reg [4:0] REGF_A3;
+(* keep *)wire [4:0] REGF_A1;	
+(* keep *)wire [4:0] REGF_A2;
+(* keep *)reg [4:0] REGF_A3;
+(* keep *)wire [31:0] REGF_RD1;
+(* keep *)wire [31:0] REGF_RD2;
+(* keep *)reg [31:0] REGF_WD3;
 
-wire [31:0] REGF_RD1;
-wire [31:0] REGF_RD2;
-reg [31:0] REGF_WD3;
-
-reg [31:0] result;		// result: controlls by MemtoReg: if = [0] -> result = alu_result, if = [1] -> result = RAM_RD
+// result: controlls by MemtoReg: 
+//if = [0] -> result = alu_result, 
+//if = [1] -> result = RAM_RD
+(* keep *)reg [31:0] result;		
 
 assign REGF_A1 = Instr[25:21];	// rs
 assign REGF_A2 = Instr[20:16];	// rt 
-
-    //assign REGF_WD3 = result;
 
 always @(*) begin
 	casex(RegDst)
@@ -160,9 +160,9 @@ end
 				.read_data2(REGF_RD2)
 			);
 
-reg [31:0] srcA;
-reg [31:0] srcB;
-wire [31:0] alu_result;
+(* keep *)reg [31:0] srcA;
+(* keep *)reg [31:0] srcB;
+(* keep *)wire [31:0] alu_result;
 
 always @(*) begin	
 	srcA = REGF_RD1;
@@ -187,9 +187,9 @@ end
 		.o_zero_flag(Zero),
 		.o_result(alu_result));
 
-wire [31:0] RAM_A;
-wire [31:0] RAM_WD;
-wire [31:0] RAM_RD;
+(* keep *)wire [31:0] RAM_A;
+(* keep *)wire [31:0] RAM_WD;
+(* keep *)wire [31:0] RAM_RD;
 
 assign RAM_A = alu_result;
 assign RAM_WD = REGF_RD2;
