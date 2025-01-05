@@ -50,7 +50,7 @@ initial begin
 end
 
 initial begin
-    $monitor("Time=%0t:\n Instr Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", 
+    $monitor("Time=%0t:\n Instr: %h\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", 
             $time, instr,
             uut.reg_file_inst.registers[0], uut.reg_file_inst.registers[1], uut.reg_file_inst.registers[2], uut.reg_file_inst.registers[3],
             uut.reg_file_inst.registers[4], uut.reg_file_inst.registers[5], uut.reg_file_inst.registers[6], uut.reg_file_inst.registers[7],

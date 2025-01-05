@@ -29,7 +29,7 @@ module data_memory (
 
     always @(posedge clk) begin
         if ((memread || memwrite) & address[1:0] != 2'b00) begin
-            $error("Address not aligned on word boundary %h", address);
+//            $error("Address not aligned on word boundary %h", address);
             $stop;
         end
     end
