@@ -16,7 +16,7 @@
 // Instruction Memory module (INST_MEM.v)
 //
 // Additional Comments:
-// Reset is synchronous with the clock
+// Reset is acsynchronous with the clock
 //////////////////////////////////////////////////////////////////////////////////
 
 

@@ -34,7 +34,6 @@ MIPS uut(.i_clk(clock),
 		.o_instruction(instr));
 
 initial begin
-#10
     clock = 0;
     forever #(PERIOD/2) clock = ~clock;
 end
