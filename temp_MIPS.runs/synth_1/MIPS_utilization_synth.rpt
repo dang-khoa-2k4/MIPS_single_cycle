@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Jan  4 22:33:58 2025
+| Date         : Sun Jan  5 23:26:02 2025
 | Host         : LAPTOP-5FE8REFD running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb
 | Design       : MIPS
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  833 |     0 |     53200 |  1.57 |
-|   LUT as Logic             |  753 |     0 |     53200 |  1.42 |
+| Slice LUTs*                |  872 |     0 |     53200 |  1.64 |
+|   LUT as Logic             |  792 |     0 |     53200 |  1.49 |
 |   LUT as Memory            |   80 |     0 |     17400 |  0.46 |
 |     LUT as Distributed RAM |   80 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   34 |     0 |       125 | 27.20 |
+| Bonded IOB                  |    2 |     0 |       125 |  1.60 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         4 |  0.00 |
@@ -149,15 +149,14 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | LUT1     |  269 |                 LUT |
-| LUT6     |  151 |                 LUT |
-| LUT2     |  120 |                 LUT |
-| LUT5     |  100 |                 LUT |
+| LUT6     |  227 |                 LUT |
+| LUT2     |  113 |                 LUT |
 | LUT3     |   86 |                 LUT |
+| LUT5     |   75 |                 LUT |
 | RAMD32   |   72 |  Distributed Memory |
-| LUT4     |   43 |                 LUT |
+| LUT4     |   38 |                 LUT |
 | CARRY4   |   36 |          CarryLogic |
 | RAMS64E  |   32 |  Distributed Memory |
-| OBUF     |   32 |                  IO |
 | FDCE     |   32 |        Flop & Latch |
 | RAMS32   |   24 |  Distributed Memory |
 | IBUF     |    2 |                  IO |

@@ -19,11 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module MIPS(i_clk, i_arst, o_instruction);
+module MIPS(i_clk, i_arst);
 
 input i_clk;	// clock signal
 input i_arst;	// reset signal
-output wire [31:0] o_instruction;
+wire [31:0] o_instruction;
 /* Control Signals */
 
 (* keep *)wire MemWrite;

@@ -55,7 +55,7 @@
 #set_property -dict { PACKAGE_PIN R18   IOSTANDARD LVCMOS33 } [get_ports { aud_pwm }]; #IO_L20N_T3_34 Sch=AUD_PWM
 #set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { aud_sd }]; #IO_L20P_T3_34 Sch=AUD_SD
 
-## Crypto SDA 
+## Crypto SDA
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { crypto_sda }]; #IO_25_35 Sch=CRYPTO_SDA
 
 ## HDMI RX Signals
@@ -183,3 +183,9 @@
 #set_property PACKAGE_PIN G18 [get_ports {netic20_g18}]; #IO_L16N_T2_35
 #set_property PACKAGE_PIN T9 [get_ports {netic20_t9}]; #IO_L12P_T1_MRCC_13
 #set_property PACKAGE_PIN U9 [get_ports {netic20_u9}]; #IO_L17P_T2_13
+
+set_property IOSTANDARD LVCMOS33 [get_ports i_arst]
+set_property IOSTANDARD LVCMOS33 [get_ports i_clk]
+set_property PACKAGE_PIN H16 [get_ports i_clk]
+set_property PACKAGE_PIN M19 [get_ports i_arst]
+

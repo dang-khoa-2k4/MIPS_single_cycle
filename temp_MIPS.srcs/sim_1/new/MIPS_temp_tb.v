@@ -25,13 +25,12 @@ parameter PERIOD = 20;	// 20
 
 reg clock;
 reg reset;
-wire [31:0] instr;
+//wire [31:0] instr;
 
 // port map - connection between master ports and signals/registers   
 												
 MIPS uut(.i_clk(clock),						
-		.i_arst(reset),
-		.o_instruction(instr));
+		.i_arst(reset));
 
 initial begin
     clock = 0;
@@ -41,7 +40,7 @@ end
 initial begin
 #0 
 	reset = 1;
-#10
+#20
 	reset = 0;
 
 #300000
@@ -49,7 +48,7 @@ initial begin
 end
 
 initial begin
-    $monitor("Time=%0t:\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", $time,
+    $monitor("Time=%0t:\n Instr: %h\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", $time, uut.o_instruction,
             uut.reg_file_inst.registers[0], uut.reg_file_inst.registers[1], uut.reg_file_inst.registers[2], uut.reg_file_inst.registers[3],
             uut.reg_file_inst.registers[4], uut.reg_file_inst.registers[5], uut.reg_file_inst.registers[6], uut.reg_file_inst.registers[7],
             uut.reg_file_inst.registers[8], uut.reg_file_inst.registers[9], uut.reg_file_inst.registers[10], uut.reg_file_inst.registers[11],
