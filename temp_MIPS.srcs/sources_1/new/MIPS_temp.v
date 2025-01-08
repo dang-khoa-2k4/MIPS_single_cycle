@@ -179,7 +179,7 @@ always @(*) begin
 	endcase
 end
 
-(* keep *)ALU alu_inst(.i_data_A(srcA),				/* ALU */
+(* keep *)ALU alu_inst(.clk(i_clk), .i_data_A(srcA),				/* ALU */
 		.i_data_B(srcB),
 		.i_alu_control(ALUControl),
 		.o_zero_flag(Zero),
