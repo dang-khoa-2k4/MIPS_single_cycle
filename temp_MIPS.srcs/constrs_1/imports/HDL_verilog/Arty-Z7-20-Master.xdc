@@ -186,3 +186,5 @@
 
 set_property IOSTANDARD LVCMOS33 [get_ports i_clk]
 set_property PACKAGE_PIN H16 [get_ports i_clk]
+set_property PACKAGE_PIN M19 [get_ports i_arst]
+set_property IOSTANDARD LVCMOS33 [get_ports i_arst]

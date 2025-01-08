@@ -22,19 +22,19 @@
 
 module ALU(clk, i_data_A, i_data_B, i_alu_control, o_zero_flag, o_result);
 input clk;
-input [31:0] i_data_A;					// A operand 
-input [31:0] i_data_B;					// B operand
+input signed [31:0] i_data_A;					// A operand 
+input signed [31:0] i_data_B;					// B operand
 input [3:0] i_alu_control;				// Control signal
 
 output reg [31:0] o_result;				// ALU result
 output wire o_zero_flag;				// Zero flag 
 
-reg [31:0] hi;
-reg [31:0] lo;
+reg signed [31:0] hi;
+reg signed [31:0] lo;
 
 initial begin
-    hi = 32'b0;
-    lo = 32'b0;
+    hi = 32'sb0;
+    lo = 32'sb0;
 end
 
 assign o_zero_flag = ~|o_result;
@@ -60,11 +60,10 @@ always @(posedge clk) begin
     case (i_alu_control)
         4'b1010: {hi, lo} <= $signed(i_data_A) * $signed(i_data_B); // MULT
         4'b1011: begin // DIV
-            hi <= i_data_B != 0 ? i_data_A % i_data_B : 32'b0;
-            lo <= i_data_B != 0 ? i_data_A / i_data_B : 32'b0;
+            hi <= i_data_B != 0 ? (i_data_A % i_data_B) : 32'sb0;
+            lo <= i_data_B != 0 ? (i_data_A / i_data_B) : 32'sb0;
         end
     endcase
 end
 
 endmodule
-
