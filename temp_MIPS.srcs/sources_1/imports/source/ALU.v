@@ -30,6 +30,14 @@ output wire o_zero_flag;				// Zero flag
 
 assign o_zero_flag = ~|o_result;
 
+reg [31:0] hi;
+reg [31:0] lo;
+
+initial begin
+    hi = 32'b0;
+    lo = 32'b0;
+end
+
 // ALU operation logic
 always @(*) begin
     case (i_alu_control)
@@ -39,10 +47,18 @@ always @(*) begin
         4'b0110: o_result = i_data_A - i_data_B;  // SUB
         4'b1100: o_result = ~(i_data_A | i_data_B); // NOR
         4'b0111: o_result = (i_data_A < i_data_B) ? 32'b1 : 32'b0; // SLT
+        4'b1000: o_result = i_data_B << i_data_A; // SLL
+        4'b1001: o_result = i_data_B >> i_data_A; // SRL
+        4'b1010: assign {hi, lo} = $signed(i_data_A) * $signed(i_data_B); // MULT
+        4'b1011: begin // DIV
+            hi = i_data_B != 0 ? i_data_A % i_data_B : 32'b0;
+            lo = i_data_B != 0 ? i_data_A / i_data_B : 32'b0;
+        end
+        4'b1101: o_result = hi; // MFHI
+        4'b1110: o_result = lo; // MFLO
         default: o_result = 32'b0;                // Default case
     endcase
 end
-
 
 endmodule
 

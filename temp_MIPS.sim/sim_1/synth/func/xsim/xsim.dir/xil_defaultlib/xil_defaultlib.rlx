@@ -2,6 +2,6 @@
 2018.2
 Jun 14 2018
 20:41:02
-C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.sim/sim_1/synth/func/xsim/testbench_func_synth.v,1735999840,verilog,,C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v,,ALU;MIPS;PC;data_memory;glbl;registers,,,,,,,,
-C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v,1735999451,verilog,,C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/pc_inst_tb.v,,testbench,,,,,,,,
-C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sim_1/new/pc_inst_tb.v,1735908188,verilog,,,,pc_inst_tb,,,,,,,,
+C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.sim/sim_1/synth/func/xsim/testbench_func_synth.v,1736243518,verilog,,C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v,,ALU;MIPS;PC;data_memory;glbl;registers,,,,,,,,
+C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sim_1/new/MIPS_temp_tb.v,1736243457,verilog,,C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sim_1/new/pc_inst_tb.v,,testbench,,,,,,,,
+C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sim_1/new/pc_inst_tb.v,1735916307,verilog,,,,pc_inst_tb,,,,,,,,

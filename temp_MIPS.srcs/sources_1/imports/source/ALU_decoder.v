@@ -44,6 +44,10 @@ always @(*) begin
                 6'b100111: ALUControl = 4'b1100; // NOR
                 6'b000000: ALUControl = 4'b1000; // SLL
                 6'b000010: ALUControl = 4'b1001; // SRL
+                6'b011000: ALUControl = 4'b1010; // MULT
+                6'b011010: ALUControl = 4'b1011; // DIV
+                6'b010000: ALUControl = 4'b1101; // MFHI
+                6'b010010: ALUControl = 4'b1110; // MFLO
                 default:   ALUControl = 4'bxxxx; // Undefined
             endcase
         end

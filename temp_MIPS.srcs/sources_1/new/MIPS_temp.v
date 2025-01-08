@@ -19,11 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module MIPS(i_clk, i_arst, o_instruction);
+module MIPS(i_clk, i_arst);
 
 input i_clk;	// clock signal
 input i_arst;	// reset signal
-output wire [31:0] o_instruction;
+wire [31:0] o_instruction;
 /* Control Signals */
 
 (* keep *)wire MemWrite;
@@ -165,7 +165,8 @@ end
 
 
 always @(*) begin
-	srcA = read_data_1;
+	srcA = Instr[5:0] == 6'b000000 || Instr[5:0] == 6'b000010 ?
+	       {27'b0, Instr[10:6]} : read_data_1;
 	casex(ALUSrc)
 		1'b0:
 			begin
