@@ -17,28 +17,30 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.xpr} [current_project]
+set_property webtalk.parent_dir C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.cache/wt [current_project]
+set_property parent.project_path C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:arty-z7-20:part0:1.1 [current_project]
 set_property ip_output_repo {c:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/temp_MIPS/temp_MIPS.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/new/MIPS_temp.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/ALU.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/Controller.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/PC.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/data_memory.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/new/others.v}
-  {C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/sources_1/imports/source/registers.v}
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/Controller.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/PC.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/data_memory.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/others.v
+  C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/registers.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,8 +50,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc}}]
+read_xdc C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/constrs_1/imports/HDL_verilog/Arty-Z7-20-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

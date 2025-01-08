@@ -183,6 +183,3 @@ create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { i_
 #set_property PACKAGE_PIN G18 [get_ports {netic20_g18}]; #IO_L16N_T2_35
 #set_property PACKAGE_PIN T9 [get_ports {netic20_t9}]; #IO_L12P_T1_MRCC_13
 #set_property PACKAGE_PIN U9 [get_ports {netic20_u9}]; #IO_L17P_T2_13
-
-set_property IOSTANDARD LVCMOS33 [get_ports i_clk]
-set_property PACKAGE_PIN H16 [get_ports i_clk]

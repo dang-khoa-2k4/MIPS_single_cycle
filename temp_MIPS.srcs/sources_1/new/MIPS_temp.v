@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-    module MIPS(i_clk, i_arst);
+module MIPS(i_clk, i_arst);
 
 input i_clk;	// clock signal
 input i_arst;	// reset signal
@@ -40,6 +40,7 @@ wire [31:0] o_instruction;
 (* keep *)wire PCSrc;						// combinational logic
 (* keep *)wire [1:0] ALUop;
 (* keep *)wire [3:0] ALUControl;
+(* keep *)wire JumpAndLink;
 
 /* End of Control Signals */
 
@@ -70,7 +71,7 @@ assign pc_jump = {pc_plus4[31:28], Instr[25:0], 2'b00};		// jump address
 
 assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
 always @(*) begin
-	casex(Jump)
+	casex(Jump || JumpAndLink)
 		1'b0:
 			begin
 				casex(PCSrc)
@@ -90,11 +91,7 @@ always @(*) begin
 			end
 	endcase
 end
-							
-(* keep *)PC pc_inst(.clock(i_clk),			/* Programm Counter */
-			.reset(i_arst),
-			.PCin(pc_next),
-			.PCout(pc_current));
+
 
 (* keep *)sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
 				.o(sign_imm));	
@@ -111,7 +108,8 @@ end
 				.RegWrite(RegWrite),
 				.Jump(Jump),
 				.ALUOp(ALUop),
-				.LuiSig(LuiSig)
+				.LuiSig(LuiSig),
+				.JumpAndLink(JumpAndLink)
 			);
 
 (* keep *)ALU_decoder alu_control_inst( /* ALU Control */
@@ -137,10 +135,18 @@ assign read_reg_2 = Instr[20:16];	// rt
 
 always @(*) begin
 	casex(RegDst)
-		1'b0:
-			begin
-				write_reg = Instr[20:16];	// rt 
-			end
+		1'b0: begin
+		    casex (JumpAndLink)
+                1'b0:
+                    begin
+                        write_reg = Instr[20:16];	// rt 
+                    end
+                1'b1:
+                    begin
+                        write_reg = 5'd31;
+                    end
+            endcase
+		end
 		1'b1:
 			begin
 				write_reg = Instr[15:11];	// rd
@@ -158,6 +164,17 @@ end
 				.read_data1(read_data_1),
 				.read_data2(read_data_2)
 			);
+			
+always @(posedge i_clk) begin
+    if (Instr[5:0] == 6'b001000) begin
+        pc_next = read_data_1;
+    end
+end
+
+(* keep *)PC pc_inst(.clock(i_clk),			/* Programm Counter */
+			.reset(i_arst),
+			.PCin(pc_next),
+			.PCout(pc_current));
 
 (* keep *)reg [31:0] srcA;
 (* keep *)reg [31:0] srcB;
@@ -195,6 +212,7 @@ assign RAM_WD = read_data_2;
 /* Data Memory, RAM */
 (* keep *)data_memory data_memory_inst(.clk(i_clk),		
 				.memwrite(MemWrite),
+				.memread(MemRead),
 				.address(RAM_A),
 				.write_data(RAM_WD),
 				.read_data(RAM_RD));
@@ -215,14 +233,23 @@ end
 
 always @(*) begin
 	casex (LuiSig)
-		1'b0:
-			begin
-				write_data = result;
-			end
+		1'b0: begin
+		    casex (JumpAndLink)
+                1'b0:
+                    begin
+                        write_data = result;
+                    end
+                1'b1:
+                    begin
+                        write_data = pc_plus4;
+                    end
+            endcase
+		end
 		1'b1:
 			begin
 				write_data = {Instr[15:0], 16'b0};
 			end
 	endcase
 end
+
 endmodule

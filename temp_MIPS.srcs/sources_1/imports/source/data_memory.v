@@ -9,7 +9,7 @@
 module data_memory (
     input clk,                   // Clock signal
     input memwrite,              // Memory write enable signal
-    input memread,               // Memory read enable signal (not actually needed here)
+    input memread,               // Memory read enable signal
     input [31:0] address,        // 32-bit memory address
     input [31:0] write_data,     // Data to write into memory
 

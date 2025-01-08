@@ -35,7 +35,8 @@ module Controller(
     output reg Jump,           // Jump signal
     output reg [1:0] ALUOp,    // ALU control signal
     output reg Branch_bne,     // Enable branch if not equal
-    output reg LuiSig          // Enable Load Upper Immediate signal
+    output reg LuiSig,         // Enable Load Upper Immediate signal
+    output reg JumpAndLink    // Enable Jump And Link
 );
 
 always @(*) begin
@@ -51,6 +52,7 @@ always @(*) begin
     Jump     = 0;
     LuiSig   = 0;
     ALUOp    = 2'b00;
+    JumpAndLink  = 0;
 
     // Decode opcode
     case (opcode)
@@ -110,6 +112,10 @@ always @(*) begin
             LuiSig   = 1;
             RegWrite = 1;
         end
+        6'b000011: begin // jal (Jump And Link)
+            JumpAndLink  = 1;
+            RegWrite     = 1;
+        end
         default: begin
             // Default: all control signals are 0
             RegDst   = 0;
@@ -123,6 +129,7 @@ always @(*) begin
             Jump     = 0;
             LuiSig   = 0;
             ALUOp    = 2'b00;
+            JumpAndLink  = 0;
         end
     endcase
 end
