@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="synth_1" LaunchDir="C:/Users/ADMIN/OneDrive - hcmut.edu.vn/University/Junior/Logic design project/single_cycle_MIPS/temp_MIPS.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 </Runs>
 

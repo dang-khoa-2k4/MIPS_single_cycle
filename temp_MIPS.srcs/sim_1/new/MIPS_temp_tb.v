@@ -25,13 +25,11 @@ parameter PERIOD = 20;	// 20
 
 reg clock;
 reg reset;
-wire [31:0] instr;
 
 // port map - connection between master ports and signals/registers   
 												
 MIPS uut(.i_clk(clock),						
-		.i_arst(reset),
-		.o_instruction(instr));
+		.i_arst(reset));
 
 initial begin
     clock = 0;
@@ -43,12 +41,13 @@ initial begin
 	reset = 1;
 #10
 	reset = 0;
-
-#300000
+#500
     $finish;  
+end
 
-$monitor("Time=%0t:\n Instr: %h\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h", 
-            $time, uut.Instr,
+initial begin
+    $monitor("Time=%0t:\n Instr: %h\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n Data:\n %h %h %h %h %h %h %h %h\n %h %h %h %h %h %h %h %h\n hi: %h, lo: %h", 
+            $time, uut.o_instruction,
             uut.reg_file_inst.registers[0], uut.reg_file_inst.registers[1], uut.reg_file_inst.registers[2], uut.reg_file_inst.registers[3],
             uut.reg_file_inst.registers[4], uut.reg_file_inst.registers[5], uut.reg_file_inst.registers[6], uut.reg_file_inst.registers[7],
             uut.reg_file_inst.registers[8], uut.reg_file_inst.registers[9], uut.reg_file_inst.registers[10], uut.reg_file_inst.registers[11],
@@ -60,7 +59,7 @@ $monitor("Time=%0t:\n Instr: %h\n Registers:\n %h %h %h %h %h %h %h %h\n %h %h %
             uut.data_memory_inst.memory[0], uut.data_memory_inst.memory[1], uut.data_memory_inst.memory[2], uut.data_memory_inst.memory[3],
             uut.data_memory_inst.memory[4], uut.data_memory_inst.memory[5], uut.data_memory_inst.memory[6], uut.data_memory_inst.memory[7],
             uut.data_memory_inst.memory[8], uut.data_memory_inst.memory[9], uut.data_memory_inst.memory[10], uut.data_memory_inst.memory[11],
-            uut.data_memory_inst.memory[12], uut.data_memory_inst.memory[13], uut.data_memory_inst.memory[14], uut.data_memory_inst.memory[15]);
-
+            uut.data_memory_inst.memory[12], uut.data_memory_inst.memory[13], uut.data_memory_inst.memory[14], uut.data_memory_inst.memory[15],
+            uut.alu_inst.hi, uut.alu_inst.lo);
 end
 endmodule
