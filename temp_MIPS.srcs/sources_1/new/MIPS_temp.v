@@ -70,27 +70,12 @@ assign pc_branch = pc_plus4 + shifted_sign_imm;		// PCBranch = PC + 4 + (SignedI
 assign pc_jump = {pc_plus4[31:28], Instr[25:0], 2'b00};		// jump address
 
 assign PCSrc = (Branch_beq & Zero) | (Branch_bne & !Zero);
-always @(*) begin
-	casex(Jump || JumpAndLink)
-		1'b0:
-			begin
-				casex(PCSrc)
-					1'b0:
-						begin
-							pc_next = pc_plus4;
-						end
-					1'b1:	
-						begin
-							pc_next = pc_branch;
-						end
-				endcase
-			end
-		1'b1:	
-			begin
-				pc_next = pc_jump;
-			end
-	endcase
-end
+
+
+(* keep *)PC pc_inst(.clock(i_clk),			/* Programm Counter */
+			.reset(i_arst),
+			.PCin(pc_next),
+			.PCout(pc_current));
 
 
 (* keep *)sign_extend sign_ext_inst(.i(Instr[15:0]),	/* Sign Extender */
@@ -165,16 +150,21 @@ end
 				.read_data2(read_data_2)
 			);
 			
-always @(posedge i_clk) begin
+always @(*) begin
     if (Instr[5:0] == 6'b001000) begin
         pc_next = read_data_1;
     end
+    else if (Jump) begin
+        pc_next = pc_jump;
+    end
+    else if (PCSrc) begin
+        pc_next = pc_branch;
+    end
+    else begin
+        pc_next = pc_plus4;
+    end
 end
 
-(* keep *)PC pc_inst(.clock(i_clk),			/* Programm Counter */
-			.reset(i_arst),
-			.PCin(pc_next),
-			.PCout(pc_current));
 
 (* keep *)reg [31:0] srcA;
 (* keep *)reg [31:0] srcB;
@@ -182,7 +172,7 @@ end
 
 
 always @(*) begin
-	srcA = Instr[5:0] == 6'b000000 || Instr[5:0] == 6'b000010 ?
+	srcA = (Instr[31:26] == 0) && (Instr[5:0] == 6'h00 || Instr[5:0] == 6'h02) ?
 	       {27'b0, Instr[10:6]} : read_data_1;
 	casex(ALUSrc)
 		1'b0:
@@ -234,7 +224,7 @@ end
 always @(*) begin
 	casex (LuiSig)
 		1'b0: begin
-		    casex (JumpAndLink)
+            casex (JumpAndLink)
                 1'b0:
                     begin
                         write_data = result;

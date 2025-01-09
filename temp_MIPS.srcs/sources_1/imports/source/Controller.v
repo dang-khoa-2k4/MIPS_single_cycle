@@ -113,6 +113,7 @@ always @(*) begin
             RegWrite = 1;
         end
         6'b000011: begin // jal (Jump And Link)
+            Jump         = 1;
             JumpAndLink  = 1;
             RegWrite     = 1;
         end

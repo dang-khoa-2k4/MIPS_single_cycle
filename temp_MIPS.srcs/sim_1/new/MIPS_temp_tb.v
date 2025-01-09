@@ -41,7 +41,7 @@ initial begin
 	reset = 1;
 #10
 	reset = 0;
-#1000
+#5000
     $finish;  
 end
 

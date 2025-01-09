@@ -14,25 +14,25 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2304 
+INFO: Helper process launched with PID 19432 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 338.559 ; gain = 100.117
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 337.840 ; gain = 99.629
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MIPS' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:22]
 INFO: [Synth 8-6157] synthesizing module 'INST_MEM' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v:23]
 CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'instruction.mem'; please make sure the file is added to project and has read permission, ignoring [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v:42]
 INFO: [Synth 8-6155] done synthesizing module 'INST_MEM' (1#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/INST_MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (2#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/PC.v:23]
 INFO: [Synth 8-6157] synthesizing module 'sign_extend' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/others.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'sign_extend' (2#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/others.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extend' (3#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/others.v:41]
 INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/Controller.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'Controller' (3#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/Controller.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (4#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/Controller.v:26]
 INFO: [Synth 8-6157] synthesizing module 'ALU_decoder' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v:25]
 INFO: [Synth 8-226] default block is never used [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v:33]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_decoder' (4#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_decoder' (5#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU_decoder.v:25]
 INFO: [Synth 8-6157] synthesizing module 'registers' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/registers.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'registers' (5#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/registers.v:9]
-INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/PC.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PC' (6#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'registers' (6#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/registers.v:9]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (7#1) [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU.v:23]
@@ -43,7 +43,7 @@ WARNING: [Synth 8-3331] design data_memory has unconnected port memread
 WARNING: [Synth 8-3331] design data_memory has unconnected port address[1]
 WARNING: [Synth 8-3331] design data_memory has unconnected port address[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 393.273 ; gain = 154.832
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 392.598 ; gain = 154.387
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -56,10 +56,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 393.273 ; gain = 154.832
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 392.598 ; gain = 154.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 393.273 ; gain = 154.832
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 392.598 ; gain = 154.387
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -75,22 +75,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 764.180 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 763.402 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 764.180 ; gain = 525.738
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 763.402 ; gain = 525.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 764.180 ; gain = 525.738
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 763.402 ; gain = 525.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 764.180 ; gain = 525.738
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 763.402 ; gain = 525.191
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "RegDst" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "ALUSrc" is below threshold of ROM address width. It will be mapped to LUTs
@@ -105,9 +105,8 @@ INFO: [Synth 8-5546] ROM "LuiSig" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5546] ROM "JumpAndLink" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "lo" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/imports/source/ALU.v:61]
-INFO: [Synth 8-5546] ROM "pc_next" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 764.180 ; gain = 525.738
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 763.402 ; gain = 525.191
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -124,7 +123,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 7     
 	   3 Input     32 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 3     
 +---RAMs : 
 	               2K Bit         RAMs := 1     
 +---Muxes : 
@@ -147,8 +146,6 @@ Module MIPS
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 2     
-+---Registers : 
-	               32 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 8     
 	   2 Input      5 Bit        Muxes := 2     
@@ -156,6 +153,10 @@ Module INST_MEM
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
+Module PC 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
 Module Controller 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -171,10 +172,6 @@ Module registers
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
-Module PC 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 1     
 Module ALU 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -220,9 +217,8 @@ DSP Report: operator lo0 is absorbed into DSP lo0.
 DSP Report: Generating DSP lo0, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator lo0 is absorbed into DSP lo0.
 DSP Report: operator lo0 is absorbed into DSP lo0.
-INFO: [Synth 8-5546] ROM "pc_next" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 764.180 ; gain = 525.738
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 763.402 ; gain = 525.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -271,13 +267,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 801.602 ; gain = 563.160
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:20 . Memory (MB): peak = 802.598 ; gain = 564.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:30 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:31 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -304,7 +300,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:31 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -328,84 +324,20 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[31] with 1st driver pin 'i_4056/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[31] with 2nd driver pin 'pc_next_reg[31]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[30] with 1st driver pin 'i_4055/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[30] with 2nd driver pin 'pc_next_reg[30]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[29] with 1st driver pin 'i_4054/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[29] with 2nd driver pin 'pc_next_reg[29]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[28] with 1st driver pin 'i_4053/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[28] with 2nd driver pin 'pc_next_reg[28]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[27] with 1st driver pin 'i_4052/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[27] with 2nd driver pin 'pc_next_reg[27]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[26] with 1st driver pin 'i_4051/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[26] with 2nd driver pin 'pc_next_reg[26]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[25] with 1st driver pin 'i_4050/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[25] with 2nd driver pin 'pc_next_reg[25]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[24] with 1st driver pin 'i_4049/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[24] with 2nd driver pin 'pc_next_reg[24]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[23] with 1st driver pin 'i_4048/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[23] with 2nd driver pin 'pc_next_reg[23]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[22] with 1st driver pin 'i_4047/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[22] with 2nd driver pin 'pc_next_reg[22]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[21] with 1st driver pin 'i_4046/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[21] with 2nd driver pin 'pc_next_reg[21]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[20] with 1st driver pin 'i_4045/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[20] with 2nd driver pin 'pc_next_reg[20]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[19] with 1st driver pin 'i_4044/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[19] with 2nd driver pin 'pc_next_reg[19]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[18] with 1st driver pin 'i_4043/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[18] with 2nd driver pin 'pc_next_reg[18]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[17] with 1st driver pin 'i_4042/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[17] with 2nd driver pin 'pc_next_reg[17]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[16] with 1st driver pin 'i_4041/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[16] with 2nd driver pin 'pc_next_reg[16]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[15] with 1st driver pin 'i_4040/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[15] with 2nd driver pin 'pc_next_reg[15]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[14] with 1st driver pin 'i_4039/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[14] with 2nd driver pin 'pc_next_reg[14]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[13] with 1st driver pin 'i_4038/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[13] with 2nd driver pin 'pc_next_reg[13]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[12] with 1st driver pin 'i_4037/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[12] with 2nd driver pin 'pc_next_reg[12]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[11] with 1st driver pin 'i_4036/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[11] with 2nd driver pin 'pc_next_reg[11]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[10] with 1st driver pin 'i_4035/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[10] with 2nd driver pin 'pc_next_reg[10]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[9] with 1st driver pin 'i_4034/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[9] with 2nd driver pin 'pc_next_reg[9]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[8] with 1st driver pin 'i_4033/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[8] with 2nd driver pin 'pc_next_reg[8]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[7] with 1st driver pin 'i_4032/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[7] with 2nd driver pin 'pc_next_reg[7]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[6] with 1st driver pin 'i_4031/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[6] with 2nd driver pin 'pc_next_reg[6]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[5] with 1st driver pin 'i_4030/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[5] with 2nd driver pin 'pc_next_reg[5]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[4] with 1st driver pin 'i_4029/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[4] with 2nd driver pin 'pc_next_reg[4]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[3] with 1st driver pin 'i_4028/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[3] with 2nd driver pin 'pc_next_reg[3]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[2] with 1st driver pin 'i_4027/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[2] with 2nd driver pin 'pc_next_reg[2]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[1] with 1st driver pin 'i_4026/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[1] with 2nd driver pin 'pc_next_reg[1]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[0] with 1st driver pin 'i_4025/O' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:74]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net pc_next_orig[0] with 2nd driver pin 'pc_next_reg[0]/Q' [C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.srcs/sources_1/new/MIPS_temp.v:170]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|       32|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -417,25 +349,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -456,15 +388,15 @@ Report Cell Usage:
 |3     |DSP48E1  |     4|
 |4     |LUT1     |   330|
 |5     |LUT2     |   268|
-|6     |LUT3     |   332|
+|6     |LUT3     |   364|
 |7     |LUT4     |    91|
-|8     |LUT5     |  2178|
-|9     |LUT6     |   483|
+|8     |LUT5     |  2210|
+|9     |LUT6     |   452|
 |10    |MUXF7    |     1|
 |11    |RAM32M   |    12|
 |12    |RAM64X1S |    32|
 |13    |FDCE     |    32|
-|14    |FDRE     |    96|
+|14    |FDRE     |    64|
 |15    |IBUF     |     2|
 +------+---------+------+
 
@@ -472,18 +404,18 @@ Report Instance Areas:
 +------+-------------------+------------+------+
 |      |Instance           |Module      |Cells |
 +------+-------------------+------------+------+
-|1     |top                |            |  4529|
+|1     |top                |            |  4530|
 |2     |  alu_inst         |ALU         |   639|
 |3     |  data_memory_inst |data_memory |    69|
 |4     |  pc_inst          |PC          |    32|
 |5     |  reg_file_inst    |registers   |   108|
 +------+-------------------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:32 . Memory (MB): peak = 1030.742 ; gain = 792.531
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 64 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:27 . Memory (MB): peak = 1028.703 ; gain = 419.355
-Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.703 ; gain = 790.262
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 1030.742 ; gain = 421.727
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:33 . Memory (MB): peak = 1030.742 ; gain = 792.531
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 718 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -496,11 +428,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64X1S => RAM64X1S (RAMS64E): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-47 Infos, 4 Warnings, 65 Critical Warnings and 0 Errors encountered.
+45 Infos, 4 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.703 ; gain = 803.406
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:35 . Memory (MB): peak = 1030.742 ; gain = 805.820
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Admin/Documents/MIPS_single_cycle/temp_MIPS.runs/synth_1/MIPS.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MIPS_utilization_synth.rpt -pb MIPS_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1028.703 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Jan  8 23:15:05 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1030.742 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  9 11:34:30 2025...
